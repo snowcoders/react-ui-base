@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist",
+    "github": "npm run clean && npm run build && copyfiles ./dist/* ./docs",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
     "watch": "webpack --watch"
@@ -20,6 +21,7 @@
     "@types/webpack": "^3.8.1",
     "awesome-typescript-loader": "^3.4.1",
     "concurrently": "^3.5.1",
+    "copyfiles": "^1.2.0",
     "css-loader": "^0.28.7",
     "html-loader": "^0.5.1",
     "live-server": "^1.2.0",
