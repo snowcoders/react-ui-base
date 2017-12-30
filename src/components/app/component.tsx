@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
+import { HashRouter, Link, Switch, Route } from 'react-router-dom'
 
 import { Home } from "../home";
 import { ExampleUnstyledButton } from "../example-unstyled-button";
@@ -14,7 +14,7 @@ export interface IAppState {
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
         return (
-            <BrowserRouter basename={this.getBaseUrl()}>
+            <HashRouter>
                 <div className="sci-react-ui-base">
                     <div>
                         <ul>
@@ -28,15 +28,7 @@ export class App extends React.Component<IAppProps, IAppState> {
                         </Switch>
                     </div>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         );
-    }
-
-    private getBaseUrl() {
-        if (window.location.hostname === 'localhost') {
-            return '/';
-        } else {
-            return "/react-ui-base/";
-        }
     }
 }
