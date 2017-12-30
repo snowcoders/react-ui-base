@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist",
-    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
     "watch": "webpack --watch"
   },

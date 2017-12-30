@@ -14,7 +14,7 @@ export interface IAppState {
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={this.getBaseUrl()}>
                 <div className="sci-react-ui-base">
                     <div>
                         <ul>
@@ -30,5 +30,13 @@ export class App extends React.Component<IAppProps, IAppState> {
                 </div>
             </BrowserRouter>
         );
+    }
+
+    private getBaseUrl() {
+        if (window.location.hostname === 'localhost') {
+            return '/';
+        } else {
+            return "/react-ui-base/";
+        }
     }
 }
