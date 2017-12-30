@@ -1,4 +1,4 @@
-dist/**/*.hot-update.*
+dist/**
 coverage/*
 node_modules/*
 src/**/*.css
