@@ -1,0 +1,41 @@
+{
+  "name": "react-ui-base",
+  "version": "0.1.0",
+  "description": "UI base building blocks to build out more complex UI libraries",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "clean": "rimraf dist",
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
+    "watch": "webpack --watch"
+  },
+  "author": "Snowcoders",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.5.2",
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-router-dom": "^4.2.3",
+    "@types/webpack": "^3.8.1",
+    "awesome-typescript-loader": "^3.4.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.7",
+    "html-loader": "^0.5.1",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.1",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@snowcoders/react-unstyled-button": "~1.0.0"
+  }
+}

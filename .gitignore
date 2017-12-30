@@ -1,0 +1,8 @@
+dist/*
+coverage/*
+node_modules/*
+src/**/*.css
+src/**/*-css.ts
+*-lock.json
+*.lock
+*.log

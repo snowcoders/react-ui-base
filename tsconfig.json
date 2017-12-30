@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react"
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ],
+    "exclude": [
+        "./src/**/*.test.ts",
+        "./src/**/*.test.tsx"
+    ]
+}
