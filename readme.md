@@ -32,6 +32,6 @@ For the latter case, we highly suggest wrapping it into a component in your own 
 We don't recommend pulling in this bigger library directly. We don't upgrade the npm packages in here as often as we should and you'll likely be out of date faster. The better option is to depend on the components directly. Not only will you put less strain on your tree-shaking algorithm, it's much easier to know what dependencies are getting upgraded and how.
 
 ## Other documents
- - [Contributing](./contributing.md)
- - [Overriding our styles](./overrides.md)
- - [Upgrading our packages](./upgrading.md)
+ - [Contributing](./docs/contributing.md)
+ - [Overriding our styles](./docs/overrides.md)
+ - [Upgrading our packages](./docs/upgrading.md)
