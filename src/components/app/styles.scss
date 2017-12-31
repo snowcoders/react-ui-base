@@ -1,0 +1,83 @@
+.sci-react-ui-base {
+    // Styles for the whole application
+    font-family: "Segoe UI Web (West European)",Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    font-size: 15px;
+    
+    a {
+        text-decoration: none;
+        color: green;
+        &:visited {
+            color: green;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    h1,h2,h3,h4,h5,h6 {
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    // Styles for this component
+    > .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 50px;
+        height: 50px;
+
+        color: white;
+        background-color: green;
+
+        a {
+            text-decoration: none;
+            color: white;
+            &:visited {
+                color: white;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        > .app-title {
+            flex: 1 1 0px;
+            font-size: 24px;
+        }
+        > .links {
+            flex: 0 0 auto;
+
+            fill: white;
+        }
+    }
+    > .page {
+        display: flex;
+        flex-direction: row;
+
+        margin: auto;
+        margin: 30px 50px;
+
+        > .navigation {
+            flex: 0 0 200px;
+
+            ul {
+                list-style: none;
+                padding: 5px 14px;
+                li {
+                    padding: 5px 0px;
+                }
+            }
+
+            > ul {
+                margin: 0px;
+                padding: 0px;
+            }
+        }
+        > .content {
+            flex: 1 1 0px;
+            overflow: auto;
+        }
+    }
+}

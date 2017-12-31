@@ -1,0 +1,27 @@
+.sci-react-ui-base-example-component-base {
+    border: 2px solid lightgrey;
+
+    > .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        > .description {
+            flex: 1 1 0px;
+            padding: 10px 20px;
+        }
+        .toggle {
+            flex: 0 0 auto;
+        }
+    }
+    > .visual {
+        border-top: 2px solid lightgrey;
+        padding: 20px;
+        overflow: auto;
+    }
+    > .code {
+        border-top: 2px solid lightgrey;
+        padding: 20px;
+    }
+
+    margin-bottom: 20px;
+}

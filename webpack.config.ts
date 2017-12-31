@@ -9,8 +9,7 @@ const config/*: webpack.Configuration*/ = {
         filename: "[name].js",
         chunkFilename: "[name].js",
         path: __dirname + "/dist",
-        publicPath: "/dist/",
-        libraryTarget: "umd"
+        publicPath: "/dist/"
     },
 
     // Enable sourcemaps for debugging webpack's output.

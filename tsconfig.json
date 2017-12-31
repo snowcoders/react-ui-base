@@ -2,11 +2,19 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "sourceMap": true,
-        "noImplicitAny": false,
-        "module": "esnext",
-        "target": "esnext",
+        "module": "es6",
+        "target": "es2015",
         "moduleResolution": "node",
-        "jsx": "react"
+        "jsx": "react",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "declaration": true,
+        "experimentalDecorators": true,
+        "noUnusedLocals": false,
+        "forceConsistentCasingInFileNames": true,
+        "strictNullChecks": true,
+        "preserveConstEnums": true,
     },
     "include": [
         "./src/**/*.ts",
