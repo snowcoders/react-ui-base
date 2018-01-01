@@ -1,0 +1,43 @@
+.sci-react-ui-base-example {
+
+    > * {
+        margin-bottom: 20px;
+    }
+
+    > .component-example {
+        > .visual {
+            border: 2px solid lightgrey;
+            padding: 20px;
+        }
+    }
+
+    > .links-section {
+        > .list {
+            margin: 0px;
+        }
+    }
+}
+
+// Customize the UnstyledInput
+.sci-react-unstyled-input.sci-react-ui-base-example-page-unstyled-input {
+    // Box-Sizing
+    height: 36px;
+    line-height: 24px;
+    display: inline-block;
+    
+    // Font
+    font-size: 16px;
+    font-family: Roboto,sans-serif;
+
+    border-bottom: 1px solid #d0d0d0;
+    transition: border 450ms;
+
+    &::placeholder {
+        color: #d0d0d0;
+    }
+    
+    &:focus,
+    &:hover { 
+        border-bottom: 1px solid green;
+    }
+}

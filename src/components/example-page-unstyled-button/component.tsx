@@ -16,7 +16,7 @@ export class ExamplePageUnstyledButton extends React.Component {
             npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-button"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-unstyled-button"
             examples={[{
-                description: "An UnstyledButton without any of the exported styles from the component",
+                description: "An UnstyledButton with the exported styles disabled",
                 example: <UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>,
                 source: "<UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>"
             }, {

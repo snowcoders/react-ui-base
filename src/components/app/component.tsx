@@ -3,6 +3,7 @@ import * as React from 'react';
 import { HashRouter, Link, Switch, Route } from 'react-router-dom'
 
 import { Home } from "../home";
+import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
 
 export interface IAppProps {
@@ -34,6 +35,7 @@ export class App extends React.Component<IAppProps, IAppState> {
                                     <span>Components</span>
                                     <ul>
                                         <li><Link to="/unstyled-button">Unstyled Button</Link></li>
+                                        <li><Link to="/unstyled-input">Unstyled Input</Link></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -41,6 +43,7 @@ export class App extends React.Component<IAppProps, IAppState> {
                         <div className="content">
                             <Switch>
                                 <Route exact path='/unstyled-button' component={ExamplePageUnstyledButton} />
+                                <Route exact path='/unstyled-input' component={ExamplePageUnstyledInput} />
                                 <Route path='*' component={Home} />
                             </Switch>
                         </div>

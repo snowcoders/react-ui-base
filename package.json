@@ -40,6 +40,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "@snowcoders/react-unstyled-button": "~1.0.0"
+    "@snowcoders/react-unstyled-button": "~1.1.0",
+    "@snowcoders/react-unstyled-input": "~0.1.0"
   }
 }

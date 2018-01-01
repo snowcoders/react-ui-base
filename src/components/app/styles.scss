@@ -20,6 +20,10 @@
         margin-bottom: 20px;
     }
 
+    * {
+        outline: 0;
+    }
+
     // Styles for this component
     > .header {
         display: flex;
