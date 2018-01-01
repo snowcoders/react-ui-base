@@ -1,0 +1,56 @@
+.sci-react-ui-base-example {
+
+    > * {
+        margin-bottom: 20px;
+    }
+
+    > .component-example {
+        > .visual {
+            border: 2px solid lightgrey;
+            padding: 20px;
+        }
+    }
+
+    > .links-section {
+        > .list {
+            margin: 0px;
+        }
+    }
+}
+
+// Customize the Tabs
+.sci-react-tabs.sci-react-ui-base-example-page-tabs {
+    > .tabs {
+        background-color: #2196f3;
+        font-size: 13px;
+        flex: 0 0 50px;
+
+        > .tab-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: rgba(255, 255, 255, 0.5);
+            
+            text-transform: uppercase;
+
+            transition: all 450ms;
+            
+            > * {
+                flex: 0 0 auto;
+                
+                min-width: 160px;
+                padding: 6px 24px;
+                margin: 2px;
+            }
+
+            &.selected {
+                color: rgba(255, 255, 255, 1);
+                border-bottom: 2px solid rgb(255, 64, 129);
+            }
+        }
+    }
+    > .contents {
+        margin: 10px;
+    }
+}
