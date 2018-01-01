@@ -33,5 +33,6 @@ We don't recommend pulling in this bigger library directly. We don't upgrade the
 
 ## Other documents
  - [Contributing](./docs/contributing.md)
+ - [Developing](./docs/developing.md)
  - [Overriding our styles](./docs/overrides.md)
  - [Upgrading our packages](./docs/upgrading.md)
