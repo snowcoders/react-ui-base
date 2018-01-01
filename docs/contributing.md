@@ -1,3 +1,12 @@
+
+# Requesting new components
+First and foremost keep in mind that this library is meant to be a base for other UI libraries. Given that, when requesting a component, please provide several examples of other existing UI libraries that have that same component. Great UI libraries to look from would be:
+ - [JQuery UI](https://jqueryui.com/)
+ - [Google's Material UI](www.material-ui.com/)
+ - [Microsoft Office's Fabric UI](https://developer.microsoft.com/en-us/fabric#/components)
+
+When requesting new components, please reference these or other UI libraries that have similar components. This helps see all the different ways people may use the component which helps us build it in a more flexible way.
+
 # Adding new components
 Hearing the idea of this library and thinking, "This is awesome! I want to help write new components!", that's awesome! Here is the process for getting into our library:
 1. Feel free to write your component in a public repository.
