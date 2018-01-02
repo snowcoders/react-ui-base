@@ -1,7 +1,6 @@
 {
-  "name": "react-ui-base",
+  "name": "@snowcoders/react-ui-base",
   "version": "0.1.0",
-  "description": "UI base building blocks to build out more complex UI libraries",
   "main": "dist/main.js",
   "scripts": {
     "build": "webpack",
