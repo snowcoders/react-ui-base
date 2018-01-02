@@ -30,7 +30,7 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
 
         let classNameToName: { className: AvailableClassNames, name: string }[] = [{
             className: "default",
-            name: "Default styling"
+            name: "No custom styling"
         }, {
             className: "google",
             name: "Google's Material UI"
@@ -50,7 +50,7 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
             npmUrl="https://www.npmjs.com/package/@snowcoders/react-tabs"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-tabs"
             examples={[{
-                description: "A Tabs with the exported styles",
+                description: "Tabs component with styling of a few UI libraries",
                 example: (
                     <div className="sci-react-ui-base-example-page-tabs">
                         <div className="styleSelector">
