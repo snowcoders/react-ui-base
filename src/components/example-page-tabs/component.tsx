@@ -8,7 +8,7 @@ import { ExamplePageBase } from '../example-page-base';
 
 import * as classnames from "classnames";
 
-export type AvailableClassNames = "" | "google" | "office" | "jquery-ui";
+export type AvailableClassNames = "google" | "office" | "jquery-ui" | "default";
 
 export interface IExamplePageTabsProps {
 }
@@ -22,11 +22,25 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
         super(props);
 
         this.state = {
-            classNameToApply: "jquery-ui"
+            classNameToApply: "google"
         };
     }
 
     render() {
+
+        let classNameToName: { className: AvailableClassNames, name: string }[] = [{
+            className: "default",
+            name: "Default styling"
+        }, {
+            className: "google",
+            name: "Google's Material UI"
+        }, {
+            className: "jquery-ui",
+            name: "Jquery UI"
+        }, {
+            className: "office",
+            name: "Microsoft Office's Fabric UI"
+        }];
 
         return <ExamplePageBase
             componentName="Unstyled Input"
@@ -40,17 +54,20 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
                 example: (
                     <div className="sci-react-ui-base-example-page-tabs">
                         <div className="styleSelector">
-                            <label><input type="radio" name="style" onClick={this.getOnClick("")} value="" checked={this.state.classNameToApply === ""} />None</label>
-                            <label><input type="radio" name="style" onClick={this.getOnClick("google")} value="google" checked={this.state.classNameToApply === "google"} />Google's Material UI</label>
-                            <label><input type="radio" name="style" onClick={this.getOnClick("office")} value="office" checked={this.state.classNameToApply === "office"} />Microsoft Office Fabric</label>
-                            <label><input type="radio" name="style" onClick={this.getOnClick("jquery-ui")} value="jquery-ui" checked={this.state.classNameToApply === "jquery-ui"} />JQuery UI</label>
+                            {
+                                classNameToName.map((value) => {
+                                    return <label key={value.className}><input type="radio" name="style" onClick={this.getOnClick(value.className)} value={value.className} checked={this.state.classNameToApply === value.className} />{value.name}</label>
+                                })
+                            }
                         </div>
-                        <Tabs className={classnames(this.state.classNameToApply)} tabs={[1, 2, 3, 4].map((value) => {
-                            return {
-                                header: <div>Tab {value}</div>,
-                                content: <div>Tab {value}'s content</div>
-                            };
-                        })} />
+                        <Tabs
+                            className={classnames(this.state.classNameToApply)}
+                            tabs={[1, 2, 3, 4].map((value) => {
+                                return {
+                                    header: <div>Tab {value}</div>,
+                                    content: <div>Tab {value}'s content</div>
+                                };
+                            })} />
                     </div>),
                 source: `TODO`
             }]}
