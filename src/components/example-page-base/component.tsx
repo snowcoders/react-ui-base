@@ -29,7 +29,7 @@ export class ExamplePageBase extends React.Component<IExamplePageBaseProps> {
                 </div>
                 <div className="examples">
                     <h2>Examples</h2>
-                    <p>The source code for these examples can be found <a href={this.props.exampleSrcUrl}>here</a></p>
+                    <p>The source code for these examples can be found <a href={this.props.exampleSrcUrl} target="_blank">here</a></p>
                     {this.props.examples.map((value, index) => {
                         return <ExampleComponentBase
                             key={index}
