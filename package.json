@@ -7,6 +7,7 @@
     "build": "webpack",
     "clean": "rimraf dist",
     "github": "npm run clean && npm run build && copyfiles ./dist/* ./docs",
+    "prepare": "npm run clean && npm run build",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
     "watch": "webpack --watch"
