@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { HashRouter, Link, Switch, Route } from 'react-router-dom'
+import { HashRouter, Link, Switch, Route } from 'react-router-dom';
 
 import { Home } from "../home";
 import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
+import { ExamplePageTabs } from '../example-page-tabs';
 
 export interface IAppProps {
 }
@@ -14,6 +15,29 @@ export interface IAppState {
 
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
+        let linkConfig = [
+            {
+                name: "Tabs",
+                url: "/tabs",
+                component: ExamplePageTabs
+            },
+            {
+                name: "Unstyled Button",
+                url: "/unstyled-button",
+                component: ExamplePageUnstyledButton
+            },
+            {
+                name: "Unstyled Input",
+                url: "/unstyled-input",
+                component: ExamplePageUnstyledInput
+            },
+        ];
+
+        // Sort them just in case we were idiots and cant sort things
+        linkConfig.sort((a, b) => {
+            return a.url.localeCompare(b.url);
+        });
+
         return (
             <HashRouter>
                 <div className="sci-react-ui-base">
@@ -34,16 +58,22 @@ export class App extends React.Component<IAppProps, IAppState> {
                                 <li>
                                     <span>Components</span>
                                     <ul>
-                                        <li><Link to="/unstyled-button">Unstyled Button</Link></li>
-                                        <li><Link to="/unstyled-input">Unstyled Input</Link></li>
+                                        {
+                                            linkConfig.map((value) => {
+                                                return <li key={value.name}><Link to={value.url}>{value.name}</Link></li>;
+                                            })
+                                        }
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div className="content">
                             <Switch>
-                                <Route exact path='/unstyled-button' component={ExamplePageUnstyledButton} />
-                                <Route exact path='/unstyled-input' component={ExamplePageUnstyledInput} />
+                                {
+                                    linkConfig.map((value) => {
+                                        return <Route key={value.name} exact path={value.url} component={value.component} />;
+                                    })
+                                }
                                 <Route path='*' component={Home} />
                             </Switch>
                         </div>

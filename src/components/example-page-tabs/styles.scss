@@ -1,0 +1,161 @@
+.sci-react-ui-base-example {
+    > * {
+        margin-bottom: 20px;
+    }
+
+    > .component-example {
+        > .visual {
+            border: 2px solid lightgrey;
+            padding: 20px;
+        }
+    }
+
+    > .links-section {
+        > .list {
+            margin: 0px;
+        }
+    }
+}
+
+.sci-react-ui-base-example-page-tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+
+    > .styleSelector {
+        flex: 0 0 auto;
+
+        display: grid;
+        grid-gap: 10px;
+
+        margin-bottom: 10px;
+
+        > * {
+            margin-right: 10px;
+        }
+    }
+    > .sci-react-tabs{
+        flex: 1 1 0px;
+    }
+
+    // Google layout
+    > .sci-react-tabs.google {
+        > .tabs {
+            background-color: #2196f3;
+            font-size: 13px;
+
+            > .tab-item {
+                flex: 1 1 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: rgba(255, 255, 255, 0.5);
+                
+                text-transform: uppercase;
+
+                transition: all 250ms;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                
+                > * {
+                    flex: 0 0 auto;
+                    
+                    padding: 14px 24px;
+                }
+
+                &.selected {
+                    color: rgba(255, 255, 255, 1);
+                    border-bottom: 2px solid rgb(255, 64, 129);
+                }
+            }
+        }
+        > .contents {
+            margin: 10px;
+        }
+    }
+
+    // Office layout
+    > .sci-react-tabs.office {
+        font-family: "Segoe UI Web (West European)","Segoe UI",-apple-system,BlinkMacSystemFont,"Roboto","Helvetica Neue",sans-serif;
+
+        > .tabs {
+            font-size: 14px;
+            font-weight: 400;
+
+            > .tab-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: #333333;
+                
+                text-transform: uppercase;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                margin: 0px 10px;
+
+                > * {
+                    flex: 0 0 40px;
+                    
+                    padding: 10px 0px;
+                }
+
+                &.selected {
+                    border-bottom: 2px solid #0078d7;
+                    font-weight: 600;
+                }
+            }
+        }
+        > .contents {
+            margin: 10px;
+        }
+    }
+
+    // Office layout
+    > .sci-react-tabs.jquery-ui {
+        font-family: "Segoe UI Web (West European)","Segoe UI",-apple-system,BlinkMacSystemFont,"Roboto","Helvetica Neue",sans-serif;
+
+        > .tabs {
+            font-size: 14px;
+            font-weight: 400;
+
+            background-color: rgb(233, 233, 233);
+            border-top: 5px solid rgb(233, 233, 233);
+            border-left: 3px solid rgb(233, 233, 233);
+            border-right: 3px solid rgb(233, 233, 233);
+            border-radius: 3px;
+
+            > .tab-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                margin: 0px 2px;
+                border: 1px solid rgb(197, 197, 197);
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+
+                background-color: rgb(246, 246, 246);
+                color: #333333;
+                font-family: Arial,Helvetica,sans-serif;
+                font-size: 16px;
+                text-transform: capitalize;
+
+                > * {
+                    padding: 8px 16px;
+                }
+
+                &.selected {
+                    background-color: rgb(0, 127, 255);
+                    border-color: rgb(0, 62, 255);
+                    color: rgb(255, 255, 255);
+                    font-weight: 600;
+                }
+            }
+        }
+        > .contents {
+            margin: 10px;
+        }
+    }
+}

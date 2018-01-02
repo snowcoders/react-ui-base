@@ -9,7 +9,6 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
-        "declaration": true,
         "experimentalDecorators": true,
         "noUnusedLocals": false,
         "forceConsistentCasingInFileNames": true,
