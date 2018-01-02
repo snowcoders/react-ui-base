@@ -6,7 +6,26 @@ import { Tabs } from "@snowcoders/react-tabs";
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
 
-export class ExamplePageTabs extends React.Component {
+import * as classnames from "classnames";
+
+export type AvailableClassNames = "" | "google" | "office" | "jquery-ui";
+
+export interface IExamplePageTabsProps {
+}
+
+export interface IExamplePageTabsState {
+    classNameToApply: AvailableClassNames;
+}
+
+export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExamplePageTabsState> {
+    constructor(props: IExamplePageTabsProps) {
+        super(props);
+
+        this.state = {
+            classNameToApply: "jquery-ui"
+        };
+    }
+
     render() {
 
         return <ExamplePageBase
@@ -18,18 +37,31 @@ export class ExamplePageTabs extends React.Component {
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-tabs"
             examples={[{
                 description: "A Tabs with the exported styles",
-                example: <Tabs className="sci-react-ui-base-example-page-tabs" tabs={[1, 2, 3, 4].map((value) => {
-                    return {
-                        header: <div>Tab {value}</div>,
-                        content: <div>Tab {value}'s content</div>
-                    };
-                })} />,
+                example: (
+                    <div className="sci-react-ui-base-example-page-tabs">
+                        <div className="styleSelector">
+                            <label><input type="radio" name="style" onClick={this.getOnClick("")} value="" checked={this.state.classNameToApply === ""} />None</label>
+                            <label><input type="radio" name="style" onClick={this.getOnClick("google")} value="google" checked={this.state.classNameToApply === "google"} />Google's Material UI</label>
+                            <label><input type="radio" name="style" onClick={this.getOnClick("office")} value="office" checked={this.state.classNameToApply === "office"} />Microsoft Office Fabric</label>
+                            <label><input type="radio" name="style" onClick={this.getOnClick("jquery-ui")} value="jquery-ui" checked={this.state.classNameToApply === "jquery-ui"} />JQuery UI</label>
+                        </div>
+                        <Tabs className={classnames(this.state.classNameToApply)} tabs={[1, 2, 3, 4].map((value) => {
+                            return {
+                                header: <div>Tab {value}</div>,
+                                content: <div>Tab {value}'s content</div>
+                            };
+                        })} />
+                    </div>),
                 source: `TODO`
             }]}
         />;
     }
 
-    onClick = () => {
-        alert("Button was clicked");
-    };
+    getOnClick(className: AvailableClassNames) {
+        return () => {
+            this.setState({
+                classNameToApply: className
+            });
+        };
+    }
 }
