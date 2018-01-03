@@ -6,6 +6,7 @@ import { Home } from "../home";
 import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
 import { ExamplePageTabs } from '../example-page-tabs';
+import { ExamplePageDialog } from '../example-page-dialog';
 
 export interface IAppProps {
 }
@@ -16,6 +17,11 @@ export interface IAppState {
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
         let linkConfig = [
+            {
+                name: "Dialog",
+                url: "/dialog",
+                component: ExamplePageDialog
+            },
             {
                 name: "Tabs",
                 url: "/tabs",
