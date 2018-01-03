@@ -19,10 +19,11 @@
     // Google layout
     > .sci-react-dialog.google {
         visibility: hidden;
+        transition: visibility 250ms;
         > .overlay {
             background-color: rgba(0,0,0,0.5);
             opacity: 0;
-            transition: opacity 250ms, visibility 250ms;
+            transition: opacity 250ms;
 
             > .dialog {
                 font-family: Roboto,sans-serif;
@@ -72,6 +73,7 @@
 
         &.visible {
             visibility: visible;
+
             > .overlay {
                 opacity: 1;
 
@@ -85,10 +87,11 @@
     // Office layout
     > .sci-react-dialog.office {
         visibility: hidden;
+        transition: visibility 250ms;
         > .overlay {
             background-color: rgba(0,0,0,0.5);
             opacity: 0;
-            transition: opacity 250ms, visibility 250ms;
+            transition: opacity 250ms;
 
             > .dialog {
                 font-family: "Segoe UI Web (West European)",Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
@@ -118,6 +121,7 @@
 
         &.visible {
             visibility: visible;
+
             > .overlay {
                 opacity: 1;
             }

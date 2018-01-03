@@ -57,14 +57,14 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
                             }
                         </div>
                         <div>
-                            <button onClick={this.onOpenDialogToggle}>
+                            <button onClick={this.getOnOpenDialogToggle(true)}>
                                 Open dialog
                             </button>
                         </div>
                         <Dialog
                             className={classnames(this.state.classNameToApply)}
                             isVisible={this.state.isDialogOpen}
-                            onBackgroundClick={this.onOpenDialogToggle}
+                            onBackgroundClick={this.getOnOpenDialogToggle(false)}
                         >
                             <h3 tab-index="1">Dialog</h3>
                             <div className="content">
@@ -88,10 +88,12 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
         />;
     }
 
-    onOpenDialogToggle = () => {
-        this.setState({
-            isDialogOpen: !this.state.isDialogOpen
-        });
+    getOnOpenDialogToggle = (isDialogOpen: boolean) => {
+        return () => {
+            this.setState({
+                isDialogOpen: isDialogOpen
+            });
+        }
     };
 
     getOnClick(className: AvailableClassNames) {
