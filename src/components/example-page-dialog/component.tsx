@@ -71,13 +71,10 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
                                 <span>Often times there are cancel, submit and close buttons inside the dialog. These vary from library to library so we left the contents of this div to be whatever you may wish. That said, you do get a few things for free:</span>
                                 <ul>
                                     <li>Clicking the grey overlay fires a callback, which you can either close or not close the dialog</li>
-                                </ul>
-                                <span>Some future work to be done</span>
-                                <ul>
-                                    <li>Pressing escape will close this dialog</li>
+                                    <li>Pressing escape will fire the same callback as the overlay</li>
                                     <li>Tabbing in the dialog will not leave this dialog</li>
                                 </ul>
-                                <span>If you need to support accessibility scenarios, here are some suggestions</span>
+                                <span>If you need to support accessibility scenarios, here are some implementation suggestions</span>
                                 <ul>
                                     <li>Always have some sort of button to close the dialog. Without this a screen reader will not announce how to close the dialog</li>
                                 </ul>
