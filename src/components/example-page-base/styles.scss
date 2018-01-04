@@ -10,25 +10,3 @@
         }
     }
 }
-
-// Customize the unstyled button
-.sci-react-unstyled-button.sci-react-ui-base-example-page-unstyled-button {
-    // Box-Sizing
-    padding: 14px 40px;
-    border-radius: 100px;
-    border-width: 0px;
-    border-style: solid;
-
-    // Colors
-    border-color: #16da00;
-    background-color: green;
-    color: white;
-    
-    // Sizes
-    font-size: 16px;
-    font-family: "Open Sans",X-LocaleSpecific,sans-serif;
-
-    &:hover {
-        background-color: darkgreen;
-    }
-}

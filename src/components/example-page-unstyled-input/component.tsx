@@ -29,7 +29,32 @@ export class ExamplePageUnstyledInput extends React.Component {
             }, {
                 description: "An UnstyledInput with custom styles",
                 example: <UnstyledInput className="sci-react-ui-base-example-page-unstyled-input" type="text" placeholder="Hint Text" defaultValue="" />,
-                source: `TODO`
+                source: `// CSS
+.sci-react-unstyled-input.sci-react-ui-base-example-page-unstyled-input {
+    // Box-Sizing
+    height: 36px;
+    line-height: 24px;
+    display: inline-block;
+    
+    // Font
+    font-size: 16px;
+    font-family: Roboto,sans-serif;
+
+    border-bottom: 1px solid #d0d0d0;
+    transition: border 450ms;
+
+    &::placeholder {
+        color: #d0d0d0;
+    }
+    
+    &:focus,
+    &:hover { 
+        border-bottom: 1px solid green;
+    }
+}
+
+import "@snowcoders/react-unstyled-input/styles.css
+<UnstyledInput className="sci-react-ui-base-example-page-unstyled-input" type="text" placeholder="Hint Text" defaultValue="" />`
             }]}
         />;
     }

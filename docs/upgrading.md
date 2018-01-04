@@ -1,8 +1,8 @@
 # Upgrading packages
 We use (Semver)[https://semver.org/] in a very specific way to help manage upgrades while not completely breaking your system as we fix bugs. For our packages, please read the following:
 
-1. MAJOR version - We completely rewrote the component and you'll likely have to rewrite your css overrides completely
-1. MINOR version - We added a div in a place and it has a low risk of breaking but still a risk
-1. PATCH version - We changed some javascript code that should have no effect on your styling
+1. MAJOR version - Javascript nor CSS is backwards compatible... you'll need to rewrite the component
+1. MINOR version - Javascript is backwards compatible but CSS is not but it is a very minor change and should take you less than a quarter of a day to upgrade.
+1. PATCH version - Javascript and CSS is backwards compatible, so keep moving!
 
-Given these scenarios, we highly recommend that you use the minor version (e.g. `~1.2.0`) when depending on our packages
+Given these scenarios, we highly recommend that you use the minor version (e.g. `~1.2.0`) when depending on our packages. An easy way to do this is add `save-prefix ~` to any npm install you perform. For example, `npm install @snowcoders/react-button --save-prefix ~`

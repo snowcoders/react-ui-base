@@ -68,8 +68,7 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
                                     content: <div>Tab {value}'s content</div>
                                 };
                             })} />
-                    </div>),
-                source: `TODO`
+                    </div>)
             }]}
         />;
     }
