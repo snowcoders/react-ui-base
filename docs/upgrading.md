@@ -6,3 +6,9 @@ We use (Semver)[https://semver.org/] in a very specific way to help manage upgra
 1. PATCH version - Javascript and CSS is backwards compatible, so keep moving!
 
 Given these scenarios, we highly recommend that you use the minor version (e.g. `~1.2.0`) when depending on our packages. An easy way to do this is add `save-prefix ~` to any npm install you perform. For example, `npm install @snowcoders/react-button --save-prefix ~`
+
+# Other interesting pages
+ - [Contributing](./contributing.md)
+ - [Developing](./developing.md)
+ - [Overriding our styles](./overrides.md)
+ - [Upgrading our packages](./upgrading.md)

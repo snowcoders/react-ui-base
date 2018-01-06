@@ -27,3 +27,7 @@ Hearing the idea of this library and thinking, "This is awesome! I want to help 
     - Edge
 
 # Other interesting pages
+ - [Contributing](./contributing.md)
+ - [Developing](./developing.md)
+ - [Overriding our styles](./overrides.md)
+ - [Upgrading our packages](./upgrading.md)
