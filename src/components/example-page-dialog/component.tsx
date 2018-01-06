@@ -67,6 +67,8 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
                             onBackgroundClick={this.getOnOpenDialogToggle(false)}
                         >
                             <h3 tab-index="1">Dialog</h3>
+                            <input className="a" type="text" />
+                            <input className="b" type="text" />
                             <div className="content">
                                 <span>Often times there are cancel, submit and close buttons inside the dialog. These vary from library to library so we left the contents of this div to be whatever you may wish. That said, you do get a few things for free:</span>
                                 <ul>

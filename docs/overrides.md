@@ -61,3 +61,9 @@ A few lessons we learned for scalable css:
  - Global classes and descendant selectors (you'll likely have some) should be globally well defined. We found that `{npm-package-name}-{component-name}` though is long, is also very specific and doesn't interfere with other libraries when we imported them
 
 Now your next goal is to keep everything up to date with as little breaking as possible, so head over to [upgrading](./upgrading.md) to learn how to do that.
+
+# Other interesting pages
+ - [Contributing](./contributing.md)
+ - [Developing](./developing.md)
+ - [Overriding our styles](./overrides.md)
+ - [Upgrading our packages](./upgrading.md)

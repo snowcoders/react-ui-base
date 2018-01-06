@@ -25,3 +25,5 @@ Hearing the idea of this library and thinking, "This is awesome! I want to help 
     - Firefox
     - Safari
     - Edge
+
+# Other interesting pages

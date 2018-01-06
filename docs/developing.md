@@ -24,3 +24,9 @@ At this point, the http server should detect the files getting rebuilt and refre
 
 # Creating new components
 Everything is effectively the same but obviously you don't have a component repository to clone. Instead of cloning an existing repository, just create a new folder for your component. You should still be able to npm link it without it being a git repository; just as long as it has a package.json.
+
+# Other interesting pages
+ - [Contributing](./contributing.md)
+ - [Developing](./developing.md)
+ - [Overriding our styles](./overrides.md)
+ - [Upgrading our packages](./upgrading.md)
