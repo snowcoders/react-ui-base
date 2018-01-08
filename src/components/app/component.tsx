@@ -7,6 +7,7 @@ import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
 import { ExamplePageTabs } from '../example-page-tabs';
 import { ExamplePageDialog } from '../example-page-dialog';
+import { ExamplePageCheckbox } from '../example-page-checkbox';
 
 export interface IAppProps {
 }
@@ -17,6 +18,11 @@ export interface IAppState {
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
         let linkConfig = [
+            {
+                name: "Checkbox",
+                url: "/checkbox",
+                component: ExamplePageCheckbox
+            },
             {
                 name: "Dialog",
                 url: "/dialog",
