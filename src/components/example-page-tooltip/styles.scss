@@ -1,0 +1,108 @@
+.sci-react-ui-base-example-page-tooltip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+
+    > .styleSelector {
+        flex: 0 0 auto;
+
+        display: grid;
+        grid-gap: 10px;
+
+        margin-bottom: 10px;
+
+        > * {
+            margin-right: 10px;
+        }
+    }
+
+    // Google's tooltip
+    > .tooltip-example {
+        $arrowSize: 100px;
+
+        position: relative;
+        height: 500px;
+        width: 500px;
+        > .container {
+            position: absolute;
+            left: calc(50% - 60px);
+            top: calc(50% - 60px);
+            font-family: "Roboto","Helvetica","Arial",sans-serif;
+
+            > .target {
+                display: inline;
+            }
+
+            > .popper {
+                position: absolute;
+                background: #FFC107;
+                color: black;
+                border-radius: 3px;
+                padding: 15px;
+                text-align: center;
+
+                > .popper__arrow {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    position: absolute;
+                    margin: -$arrowSize;
+                    border-color: #FFC107;
+                }
+                
+                &[data-placement^="top"] {
+                    margin-bottom: $arrowSize;
+                }
+                &[data-placement^="top"] .popper__arrow {
+                    border-width: $arrowSize $arrowSize 0 $arrowSize;
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    bottom: -$arrowSize;
+                    left: calc(50% - #{$arrowSize});
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                &[data-placement^="bottom"] {
+                    margin-top: $arrowSize;
+                }
+                &[data-placement^="bottom"] .popper__arrow {
+                    border-width: 0 $arrowSize $arrowSize $arrowSize;
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                    top: -$arrowSize;
+                    left: calc(50% - #{$arrowSize});
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                &[data-placement^="right"] {
+                    margin-left: $arrowSize;
+                }
+                &[data-placement^="right"] .popper__arrow {
+                    border-width: $arrowSize $arrowSize $arrowSize 0;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                    border-bottom-color: transparent;
+                    left: -$arrowSize;
+                    top: calc(50% - #{$arrowSize});
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                &[data-placement^="left"] {
+                    margin-right: $arrowSize;
+                }
+                &[data-placement^="left"] .popper__arrow {
+                    border-width: $arrowSize 0 $arrowSize $arrowSize;
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    right: -$arrowSize;
+                    top: calc(50% - #{$arrowSize});
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

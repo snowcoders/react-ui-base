@@ -44,6 +44,7 @@
     "@snowcoders/react-dialog": "~0.1.4",
     "@snowcoders/react-tabs": "~0.1.2",
     "@snowcoders/react-unstyled-button": "~1.1.5",
-    "@snowcoders/react-unstyled-input": "~0.1.1"
+    "@snowcoders/react-unstyled-input": "~0.1.1",
+    "react-popper": "^0.7.5"
   }
 }
