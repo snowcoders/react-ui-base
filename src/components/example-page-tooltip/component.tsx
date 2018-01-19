@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Manager, Target, Popper, Arrow } from 'react-popper';
+import { TargetMouseHover } from "./targetMouseHover";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
@@ -14,6 +15,8 @@ export interface IExamplePageTooltipProps {
 
 export interface IExamplePageTooltipState {
     classNameToApply: AvailableClassNames;
+    isHoveringTooltip: boolean;
+    isHoveringTarget: boolean;
 }
 
 export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps, IExamplePageTooltipState> {
@@ -21,7 +24,9 @@ export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps
         super(props);
 
         this.state = {
-            classNameToApply: "google"
+            classNameToApply: "google",
+            isHoveringTooltip: false,
+            isHoveringTarget: false
         };
     }
 
@@ -55,15 +60,26 @@ export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps
                                 {" "}
                                 <span>before the</span>
                                 {" "}
-                                <Target component="span" className="target">
-                                    Target Box
-                                </Target>
+                                <TargetMouseHover
+                                    onHoverChange={(isHovering: boolean) => {
+                                        this.setState({ isHoveringTarget: isHovering })
+                                    }}>
+                                    <span>Target Box</span>
+                                </TargetMouseHover>
+                                <Popper
+                                    placement="right"
+                                    className={classnames("popper", { visible: this.state.isHoveringTarget || this.state.isHoveringTooltip })}
+                                    onMouseOver={() => { this.setState({ isHoveringTooltip: true }) }}
+                                    onMouseOut={() => { this.setState({ isHoveringTooltip: false }) }}
+                                >
+                                    <span>I'm the tooltip</span>
+                                    <Arrow>
+                                        {({ arrowProps }) => (
+                                            <span {...arrowProps} className="popper__arrow" onMouseOver={() => { this.setState({ isHoveringTooltip: true }) }} onMouseOut={() => { this.setState({ isHoveringTooltip: false }) }} />
+                                        )}</Arrow>
+                                </Popper>
                                 {" "}
                                 <span>and I'm after it</span>
-                                <Popper placement="top" className="popper">
-                                    <span>I'm the tooltip</span>
-                                    <Arrow className="popper__arrow"></Arrow>
-                                </Popper>
                             </Manager>
                         </div>
                     </div>
