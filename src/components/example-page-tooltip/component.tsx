@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Manager, Target, Popper, Arrow } from 'react-popper';
 import { TargetMouseHover } from "./targetMouseHover";
+import { PopperMouseHover } from "./popperMouseHover";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
@@ -17,6 +18,7 @@ export interface IExamplePageTooltipState {
     classNameToApply: AvailableClassNames;
     isHoveringTooltip: boolean;
     isHoveringTarget: boolean;
+    hardDismiss: boolean;
 }
 
 export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps, IExamplePageTooltipState> {
@@ -26,7 +28,8 @@ export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps
         this.state = {
             classNameToApply: "google",
             isHoveringTooltip: false,
-            isHoveringTarget: false
+            isHoveringTarget: false,
+            hardDismiss: false
         };
     }
 
@@ -55,7 +58,7 @@ export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps
                             }
                         </div>
                         <div className="tooltip-example">
-                            <Manager className="container">
+                            <Manager className="container mouse-over">
                                 <span>I'm text</span>
                                 {" "}
                                 <span>before the</span>
@@ -64,22 +67,58 @@ export class ExamplePageTooltip extends React.Component<IExamplePageTooltipProps
                                     onHoverChange={(isHovering: boolean) => {
                                         this.setState({ isHoveringTarget: isHovering })
                                     }}>
-                                    <span>Target Box</span>
-                                </TargetMouseHover>
-                                <Popper
+                                    Target Box
+                            </TargetMouseHover>
+                                <PopperMouseHover
                                     placement="right"
                                     className={classnames("popper", { visible: this.state.isHoveringTarget || this.state.isHoveringTooltip })}
-                                    onMouseOver={() => { this.setState({ isHoveringTooltip: true }) }}
-                                    onMouseOut={() => { this.setState({ isHoveringTooltip: false }) }}
+                                    onHoverChange={(isHovering: boolean) => { this.setState({ isHoveringTooltip: isHovering }) }}
                                 >
-                                    <span>I'm the tooltip</span>
-                                    <Arrow>
-                                        {({ arrowProps }) => (
-                                            <span {...arrowProps} className="popper__arrow" onMouseOver={() => { this.setState({ isHoveringTooltip: true }) }} onMouseOut={() => { this.setState({ isHoveringTooltip: false }) }} />
-                                        )}</Arrow>
-                                </Popper>
+                                    I'm the tooltip
+                            </PopperMouseHover>
                                 {" "}
-                                <span>and I'm after it</span>
+                                <span>for the mouse hover popover</span>
+                            </Manager>
+                            <Manager className="container hard-dismiss">
+                                <span>I'm text</span>
+                                {" "}
+                                <span>before the</span>
+                                {" "}
+                                <Target>
+                                    {({ targetProps }) => (
+                                        <span
+                                            {...targetProps}
+                                            onClick={() => { this.setState({ hardDismiss: true }) }}
+                                        >
+                                            Target Box
+                                        </span>
+                                    )}
+                                </Target>
+                                <span
+                                    className={classnames("overlay", { visible: this.state.hardDismiss })}
+                                    onClick={() => { this.setState({ hardDismiss: false }) }}>
+                                    <Popper
+                                        placement="right">
+                                        {({ popperProps }) => (
+                                            <span
+                                                {...popperProps}
+                                                className={classnames("popper", { visible: this.state.hardDismiss })}
+                                                onClick={() => { }}
+                                            >
+                                                I'm the tooltip
+                                            <Arrow>
+                                                    {({ arrowProps }) => (
+                                                        <span
+                                                            {...arrowProps}
+                                                            className="popper__arrow"
+                                                        />
+                                                    )}</Arrow>
+                                            </span>
+                                        )}
+                                    </Popper>
+                                </span>
+                                {" "}
+                                <span>for the hard dismiss popover</span>
                             </Manager>
                         </div>
                     </div>
