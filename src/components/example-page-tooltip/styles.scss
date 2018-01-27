@@ -6,13 +6,14 @@
     > .styleSelector {
         flex: 0 0 auto;
 
-        display: grid;
+        display: flex;
+        flex-direction: column; 
         grid-gap: 10px;
+        margin-right: 10px;
 
-        margin-bottom: 10px;
 
         > * {
-            margin-right: 10px;
+            margin-bottom: 10px;
         }
     }
 
@@ -30,9 +31,10 @@
             left: calc(50% - 60px);
             top: calc(50% - 60px);
             font-family: "Roboto","Helvetica","Arial",sans-serif;
+            display: none;
 
-            &.mouse-over {
-                display: none;
+            &.visible {
+                display: initial;
             }
 
             > .overlay {
@@ -82,7 +84,7 @@
                     border-right-color: transparent;
                     border-bottom-color: transparent;
                     bottom: -$arrowSize;
-                    left: calc(50% - #{$arrowSize});
+                    left: 50%;
                     margin-top: 0;
                     margin-bottom: 0;
                 }
@@ -96,7 +98,7 @@
                     border-right-color: transparent;
                     border-top-color: transparent;
                     top: -$arrowSize;
-                    left: calc(50% - #{$arrowSize});
+                    left: 50%;
                     margin-top: 0;
                     margin-bottom: 0;
                 }
@@ -110,7 +112,7 @@
                     border-top-color: transparent;
                     border-bottom-color: transparent;
                     left: -$arrowSize;
-                    top: calc(50% - #{$arrowSize});
+                    top: 50%;
                     margin-left: 0;
                     margin-right: 0;
                 }
@@ -124,7 +126,7 @@
                     border-right-color: transparent;
                     border-bottom-color: transparent;
                     right: -$arrowSize;
-                    top: calc(50% - #{$arrowSize});
+                    top: 50%;
                     margin-left: 0;
                     margin-right: 0;
                 }

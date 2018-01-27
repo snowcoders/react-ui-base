@@ -1,17 +1,12 @@
 import * as React from 'react';
 
-import { IPopperProps, Popper, Arrow } from 'react-popper';
+import { IPopperProps, Popper, Arrow } from '@snowcoders/react-popper';
+import PopperJS from 'popper.js';
 
 import * as classnames from "classnames";
 
-export interface PopperMouseHoverProps extends IPopperProps {
-    /**
-     * If undefined renders a span with the className popper__arrow
-     * If null renders nothing
-     * If defined renders provided values - TODO
-     */
-    arrowElement?: React.ReactElement<any>;
-    children: React.ReactNode,
+export interface PopperMouseHoverProps extends PopperJS.PopperOptions {
+    className?: string,
     onHoverChange: (isHovering: boolean) => void;
 }
 
@@ -29,33 +24,29 @@ export class PopperMouseHover extends React.Component<PopperMouseHoverProps, Pop
         }
     }
     render() {
-        let { arrowElement, children, onHoverChange, ...popperProps } = this.props;
-        return <Popper
-            {...popperProps}
-            onMouseOver={() => { this.onPopperHover(true) }}
-            onMouseOut={() => { this.onPopperHover(false) }}
-        >
-            {children}
-            {
-                arrowElement === undefined &&
-                <Arrow>
-                    {({ arrowProps }) => (
-                        <span 
-                            {...arrowProps} 
-                            className="popper__arrow" 
-                            onMouseOver={() => { this.onArrowHover(true) }}
-                            onMouseOut={() => { this.onArrowHover(false) }}
-                        />
-                    )}</Arrow>
-            }
-            {
-                arrowElement != null &&
-                <Arrow>
-                    {({ arrowProps }) => (
-                        <span {...arrowProps} className="popper__arrow" />
-                    )}</Arrow>
-            }
-        </Popper>;
+        let { children, onHoverChange, className, ...popperProps } = this.props;
+        return <Popper {...popperProps} componentFactory={(popperChildProps) => {
+            return [
+                <span
+                    key="content"
+                    {...popperChildProps}
+                    className={className}
+                    onMouseOver={() => { this.onPopperHover(true) }}
+                    onMouseOut={() => { this.onPopperHover(false) }}>
+                    {children}
+                    <Arrow
+                        key="arrow"
+                        componentFactory={(arrowProps) => (
+                            <span
+                                {...arrowProps}
+                                className="popper__arrow"
+                                onMouseOver={() => { this.onArrowHover(true) }}
+                                onMouseOut={() => { this.onArrowHover(false) }}
+                            />
+                        )} />
+                </span>
+            ];
+        }} />;
     }
 
     private onPopperHover(isHovering: boolean) {

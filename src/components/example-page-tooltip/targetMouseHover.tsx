@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Manager, Target, Popper, Arrow } from 'react-popper';
+import { Manager, Target, Popper, Arrow } from '@snowcoders/react-popper';
 
 import * as classnames from "classnames";
 
@@ -27,27 +27,23 @@ export class TargetMouseHover extends React.Component<TargetMouseHoverProps, Tar
         let child = React.Children.toArray(this.props.children)[0];
         if (React.isValidElement(child)) {
             let child_reactElement = child as React.ReactElement<any>;
-            return <Target>
-                {({ targetProps }) => (
-                    React.cloneElement(child_reactElement, {
-                        ...targetProps,
-                        onMouseOver: () => { this.props.onHoverChange(true) },
-                        onMouseOut: () => { this.props.onHoverChange(false) }
-                    })
-                )}
-            </Target>;
+            return <Target componentFactory={(targetProps) => (
+                React.cloneElement(child_reactElement, {
+                    ...targetProps,
+                    onMouseOver: () => { this.props.onHoverChange(true) },
+                    onMouseOut: () => { this.props.onHoverChange(false) }
+                })
+            )} />
         }
         else {
-            return <Target>
-                {({ targetProps }) => (
-                    <span
-                        {...targetProps}
-                        onMouseOver={() => { this.props.onHoverChange(true) }}
-                        onMouseOut={() => { this.props.onHoverChange(false) }}>
-                        {child}
-                    </span>
-                )}
-            </Target>;
+            return <Target componentFactory={(targetProps) => (
+                <span
+                    {...targetProps}
+                    onMouseOver={() => { this.props.onHoverChange(true) }}
+                    onMouseOut={() => { this.props.onHoverChange(false) }}>
+                    {child}
+                </span>
+            )} />;
         }
     }
 
