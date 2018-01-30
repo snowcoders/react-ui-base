@@ -1,0 +1,135 @@
+.sci-react-ui-base-example-page-popover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+
+    > .styleSelector {
+        flex: 0 0 auto;
+
+        display: flex;
+        flex-direction: column; 
+        grid-gap: 10px;
+        margin-right: 10px;
+
+
+        > * {
+            margin-bottom: 10px;
+        }
+    }
+
+    > .popover-example {
+        flex: 1 1 0px;
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        $arrowSize: 100px;
+        $contentBorderRadius: 10px;
+        $contentPadding: 15px;
+        
+        > .container {
+            flex: 1 1 0px;
+
+            font-family: "Roboto","Helvetica","Arial",sans-serif;
+            display: none;
+
+            &.visible {
+                display: initial;
+            }
+
+            > .example {
+                text-align: center;
+                margin-bottom: 20px;
+
+                > .sci-react-popover--target {
+                    color: green;
+                }
+
+                > .sci-react-popover--popper {
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.4s;
+
+                    &.visible {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    > .content {
+                        position: absolute;
+                        background: #FFC107;
+                        color: black;
+                        padding: $contentPadding;
+                        text-align: center;
+
+                        > .popper__arrow {
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            position: absolute;
+                            margin: -$arrowSize;
+                            border-color: #FFC107;
+                        }
+                        
+                        &[data-placement^="top"] {
+                            margin-bottom: $arrowSize;
+                            border-radius: $contentBorderRadius $contentBorderRadius 0 0;
+                        }
+                        &[data-placement^="top"] .popper__arrow {
+                            border-width: $arrowSize $arrowSize 0 $arrowSize;
+                            border-left-color: transparent;
+                            border-right-color: transparent;
+                            border-bottom-color: transparent;
+                            bottom: -$arrowSize;
+                            left: 50%;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
+                        &[data-placement^="bottom"] {
+                            margin-top: $arrowSize;
+                            border-radius: 0 0 $contentBorderRadius $contentBorderRadius;
+                        }
+                        &[data-placement^="bottom"] .popper__arrow {
+                            border-width: 0 $arrowSize $arrowSize $arrowSize;
+                            border-left-color: transparent;
+                            border-right-color: transparent;
+                            border-top-color: transparent;
+                            top: -$arrowSize;
+                            left: 50%;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
+                        &[data-placement^="right"] {
+                            margin-left: $arrowSize;
+                            border-radius: 0 $contentBorderRadius $contentBorderRadius 0;
+                        }
+                        &[data-placement^="right"] .popper__arrow {
+                            border-width: $arrowSize $arrowSize $arrowSize 0;
+                            border-left-color: transparent;
+                            border-top-color: transparent;
+                            border-bottom-color: transparent;
+                            left: -$arrowSize;
+                            top: 50%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                        &[data-placement^="left"] {
+                            margin-right: $arrowSize;
+                            border-radius: $contentBorderRadius 0 0 $contentBorderRadius;
+                        }
+                        &[data-placement^="left"] .popper__arrow {
+                            border-width: $arrowSize 0 $arrowSize $arrowSize;
+                            border-top-color: transparent;
+                            border-right-color: transparent;
+                            border-bottom-color: transparent;
+                            right: -$arrowSize;
+                            top: 50%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

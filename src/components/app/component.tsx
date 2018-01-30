@@ -5,6 +5,7 @@ import { HashRouter, Link, Switch, Route } from 'react-router-dom';
 import { Home } from "../home";
 import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
+import { ExamplePagePopover } from '../example-page-popover';
 import { ExamplePageTabs } from '../example-page-tabs';
 import { ExamplePageDialog } from '../example-page-dialog';
 import { ExamplePageCheckbox } from '../example-page-checkbox';
@@ -32,6 +33,11 @@ export class App extends React.Component<IAppProps, IAppState> {
                 name: "Tabs",
                 url: "/tabs",
                 component: ExamplePageTabs
+            },
+            {
+                name: "Popover",
+                url: "/popover",
+                component: ExamplePagePopover
             },
             {
                 name: "Unstyled Button",
