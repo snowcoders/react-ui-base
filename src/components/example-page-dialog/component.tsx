@@ -66,7 +66,7 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
                             isVisible={this.state.isDialogOpen}
                             onBackgroundClick={this.getOnOpenDialogToggle(false)}
                         >
-                            <h3 tab-index="1">Dialog</h3>
+                            <h3 tabIndex={1}>Dialog</h3>
                             <input className="a" type="text" />
                             <input className="b" type="text" />
                             <div className="content">
