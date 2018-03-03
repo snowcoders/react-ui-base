@@ -83,7 +83,6 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
                                 <Popover
                                     popperContent={"Popper type - " + this.state.popperType}
                                     popperOptions={{
-                                        positionFixed: true,
                                         placement: "right"
                                     }}
                                     popperType={this.state.popperType}
@@ -93,12 +92,12 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
                             </div>
                             <p>
                                 Real world examples:
-                                <ul>
-                                    <li>Hover + Hover - <a href="https://material-ui-next.com/demos/tooltips/" target="_blank">Material UI's Tooltip</a></li>
-                                    <li>Click + Click - <a href="https://material-ui-next.com/demos/menus/" target="_blank">Material UI's Menus</a></li>
-                                    <li>Click + Blur - <a href="https://jqueryui.com/selectmenu/" target="_blank">jQuery UI's Select menu</a></li>
-                                </ul>
                             </p>
+                            <ul>
+                                <li>Hover + Hover - <a href="https://material-ui-next.com/demos/tooltips/" target="_blank">Material UI's Tooltip</a></li>
+                                <li>Click + Click - <a href="https://material-ui-next.com/demos/menus/" target="_blank">Material UI's Menus</a></li>
+                                <li>Click + Blur - <a href="https://jqueryui.com/selectmenu/" target="_blank">jQuery UI's Select menu</a></li>
+                            </ul>
                         </div>
                     </div>
             }]} />;

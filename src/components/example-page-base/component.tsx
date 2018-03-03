@@ -31,8 +31,9 @@ export class ExamplePageBase extends React.Component<IExamplePageBaseProps> {
                 {this.props.faq && <div className="faq">
                     <h2>Frequent questions</h2>
                     {
-                        this.props.faq.map((faq) => {
-                            return <p>{faq}</p>
+                        this.props.faq.map((faq, index) => {
+                            return <p
+                                key={index}>{faq}</p>
                         })
                     }
                 </div>

@@ -1,6 +1,6 @@
 {
   "name": "@snowcoders/react-ui-base",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "dist/main.js",
   "scripts": {
     "build": "webpack",
@@ -44,8 +44,8 @@
   "dependencies": {
     "@snowcoders/react-checkbox": "~0.1.0",
     "@snowcoders/react-dialog": "~1.0.0",
-    "@snowcoders/react-popover": "~0.3.1",
-    "@snowcoders/react-popper": "^0.7.92",
+    "@snowcoders/react-popover": "~0.3.2",
+    "@snowcoders/react-popper": "^0.8.0",
     "@snowcoders/react-tabs": "~0.1.3",
     "@snowcoders/react-unstyled-button": "~1.2.1",
     "@snowcoders/react-unstyled-input": "~0.2.0",
