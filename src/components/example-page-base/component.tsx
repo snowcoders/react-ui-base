@@ -8,7 +8,8 @@ export interface IExamplePageBaseProps {
     className?: string;
     componentName: string;
     npmPackageName: string;
-    componentDescription: string;
+    componentDescription: React.ReactNode;
+    faq?: React.ReactNode[];
     exampleSrcUrl: string;
     examples: IExampleComponentBaseProps[];
     githubUrl: string;
@@ -27,6 +28,16 @@ export class ExamplePageBase extends React.Component<IExamplePageBaseProps> {
                     <h2>Description</h2>
                     <p>{this.props.componentDescription}</p>
                 </div>
+                {this.props.faq && <div className="faq">
+                    <h2>Frequent questions</h2>
+                    {
+                        this.props.faq.map((faq, index) => {
+                            return <p
+                                key={index}>{faq}</p>
+                        })
+                    }
+                </div>
+                }
                 <div className="examples">
                     <h2>Examples</h2>
                     <p>The source code for these examples can be found <a href={this.props.exampleSrcUrl} target="_blank">here</a></p>
