@@ -16,6 +16,8 @@ export interface IExamplePagePopoverProps {
 export interface IExamplePagePopoverState {
     targetType: TargetType,
     popperType: PopperType,
+    // When the target changes, we need to remount to recreate popper.js
+    isRemounting: boolean
 }
 
 export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps, IExamplePagePopoverState> {
@@ -24,37 +26,41 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
 
         this.state = {
             targetType: "hover",
-            popperType: "hover"
+            popperType: "hover",
+            isRemounting: false
         };
     }
 
     render() {
-        let popperTypeToName: { popperType: PopperType, name: string }[] = [
-            {
-                popperType: "blur",
-                name: "Blur"
-            },
-            {
-                popperType: "click",
-                name: "Click"
-            }, {
-                popperType: "hover",
-                name: "Hover"
-            }];
-        let targetTypeToName: { targetType: TargetType, name: string }[] = [
-            {
-                targetType: "click",
-                name: "Click"
-            }, {
-                targetType: "hover",
-                name: "Hover"
-            }];
+        let popperTypeToName: { popperType: PopperType, name: string }[] = [{
+            popperType: "hover",
+            name: "Hover"
+        },
+        {
+            popperType: "blur",
+            name: "Blur"
+        },
+        {
+            popperType: "click",
+            name: "Click"
+        }, {
+            popperType: "none",
+            name: "None"
+        }];
+        let targetTypeToName: { targetType: TargetType, name: string }[] = [{
+            targetType: "hover",
+            name: "Hover"
+        },
+        {
+            targetType: "click",
+            name: "Click"
+        }];
 
         return <ExamplePageBase
             componentName="Popover"
             npmPackageName="@snowcoders/react-popover"
             componentDescription="The popover some element that expands more content from a parent element. Tooltips, dropdowns, selects, menus and more fit into this category. Instead of writing code for each of these individually, we instead wrote a few base helper classes which should allow a developer to customize them into any specific subtype."
-            faq={[<span>If your arrow is showing up in the upper left hand corner, please make sure you are installing popper.js version <code>1.13.0-next.1</code> or higher. We require the <code>positionFixed</code> property to be available.</span>]}
+            faq={[<span>If your arrow is showing up in the upper left hand corner, please make sure you are installing popper.js version <code>1.14.0</code> or higher. We require the <code>positionFixed</code> property to be available.</span>]}
             githubUrl="https://github.com/snowcoders/react-popover"
             npmUrl="https://www.npmjs.com/package/@snowcoders/react-popover"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-popover"
@@ -80,15 +86,17 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
                         </div>
                         <div className="popover-example">
                             <div className="example">
-                                <Popover
-                                    popperContent={"Popper type - " + this.state.popperType}
-                                    popperOptions={{
-                                        placement: "right"
-                                    }}
-                                    popperType={this.state.popperType}
-                                    targetContent={"Target type - " + this.state.targetType}
-                                    targetType={this.state.targetType}
-                                />
+                                {!this.state.isRemounting &&
+                                    <Popover
+                                        popperContent={"Popper type - " + this.state.popperType}
+                                        popperOptions={{
+                                            placement: "right"
+                                        }}
+                                        popperType={this.state.popperType}
+                                        targetContent={"Target type - " + this.state.targetType}
+                                        targetType={this.state.targetType}
+                                    />
+                                }
                             </div>
                             <p>
                                 Real world examples:
@@ -106,7 +114,12 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
     getOnTargetTypeClick(targetType: TargetType) {
         return () => {
             this.setState({
-                targetType: targetType
+                targetType: targetType,
+                isRemounting: true
+            }, () => {
+                this.setState({
+                    isRemounting: false
+                })
             });
         };
     };
