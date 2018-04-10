@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CodeHighlighter } from '../code-highlighter';
 
 export interface IExampleComponentBaseProps {
     description?: string;
@@ -33,12 +34,8 @@ export class ExampleComponentBase extends React.Component<IExampleComponentBaseP
                         this.props.example
                     }
                     {
-                        this.state.isCodeShowing &&
-                        <pre>
-                            <code>
-                                {this.props.source}
-                            </code>
-                        </pre>
+                        this.state.isCodeShowing && this.props.source &&
+                        <CodeHighlighter javascriptSourceCode={this.props.source} />
                     }
                 </div>
             </div>
