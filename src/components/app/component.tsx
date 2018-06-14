@@ -3,6 +3,8 @@ import * as React from 'react';
 import { HashRouter, Link, Switch, Route } from 'react-router-dom';
 
 import { Home } from "../home";
+import { Usage } from "../usage";
+import { Styling } from "../styling";
 import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
 import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
 import { ExamplePagePopover } from '../example-page-popover';
@@ -18,7 +20,19 @@ export interface IAppState {
 
 export class App extends React.Component<IAppProps, IAppState> {
     render() {
-        let linkConfig = [
+        let documentationLinkConfig = [
+            {
+                name: "Usage",
+                url: "/usage",
+                component: Usage
+            },
+            {
+                name: "Styling",
+                url: "/styling",
+                component: Styling
+            }
+        ];
+        let componentLinkConfig = [
             {
                 name: "Checkbox",
                 url: "/checkbox",
@@ -52,7 +66,7 @@ export class App extends React.Component<IAppProps, IAppState> {
         ];
 
         // Sort them just in case we were idiots and cant sort things
-        linkConfig.sort((a, b) => {
+        componentLinkConfig.sort((a, b) => {
             return a.url.localeCompare(b.url);
         });
 
@@ -74,10 +88,20 @@ export class App extends React.Component<IAppProps, IAppState> {
                             <ul>
                                 <li><Link to="/">Home</Link></li>
                                 <li>
+                                    <span>Documentation</span>
+                                    <ul>
+                                        {
+                                            documentationLinkConfig.map((value) => {
+                                                return <li key={value.name}><Link to={value.url}>{value.name}</Link></li>;
+                                            })
+                                        }
+                                    </ul>
+                                </li>
+                                <li>
                                     <span>Components</span>
                                     <ul>
                                         {
-                                            linkConfig.map((value) => {
+                                            componentLinkConfig.map((value) => {
                                                 return <li key={value.name}><Link to={value.url}>{value.name}</Link></li>;
                                             })
                                         }
@@ -88,9 +112,12 @@ export class App extends React.Component<IAppProps, IAppState> {
                         <div className="content">
                             <Switch>
                                 {
-                                    linkConfig.map((value) => {
+                                    documentationLinkConfig.map((value) => {
                                         return <Route key={value.name} exact path={value.url} component={value.component} />;
-                                    })
+                                    }).concat(
+                                        componentLinkConfig.map((value) => {
+                                            return <Route key={value.name} exact path={value.url} component={value.component} />;
+                                        }))
                                 }
                                 <Route path='*' component={Home} />
                             </Switch>

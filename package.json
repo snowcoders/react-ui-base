@@ -1,6 +1,6 @@
 {
   "name": "@snowcoders/react-ui-base",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "dist/main.js",
   "scripts": {
     "build": "webpack",
@@ -15,6 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/classnames": "^2.2.3",
+    "@types/highlight.js": "^9.12.2",
     "@types/node": "^8.5.2",
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.31",
@@ -26,6 +27,7 @@
     "concurrently": "^3.5.1",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.7",
+    "highlight.js": "^9.12.0",
     "html-loader": "^0.5.1",
     "live-server": "^1.2.0",
     "node-sass": "^4.7.2",

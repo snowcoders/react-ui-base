@@ -56,7 +56,7 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
                         <div className="styleSelector">
                             {
                                 classNameToName.map((value) => {
-                                    return <label key={value.className}><input type="radio" name="style" onClick={this.getOnClick(value.className)} value={value.className} checked={this.state.classNameToApply === value.className} />{value.name}</label>
+                                    return <label key={value.className}><input type="radio" name="style" onChange={this.getOnClick(value.className)} value={value.className} checked={this.state.classNameToApply === value.className} />{value.name}</label>
                                 })
                             }
                         </div>

@@ -1,0 +1,1 @@
+export { Styling } from "./component";
