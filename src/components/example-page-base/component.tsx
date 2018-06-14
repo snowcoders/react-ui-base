@@ -22,7 +22,7 @@ export class ExamplePageBase extends React.Component<IExamplePageBaseProps> {
             <div className={classnames("sci-react-ui-base-example-page-base", this.props.className)}>
                 <div className="title">
                     <h1>{this.props.componentName}</h1>
-                    <code className="code">npm install --save {this.props.npmPackageName} --save-prefix ~</code>
+                    <code className="code">npm install --save {this.props.npmPackageName} --save-prefix "~"</code>
                 </div>
                 <div className="description">
                     <h2>Description</h2>
