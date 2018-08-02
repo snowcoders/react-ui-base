@@ -16,7 +16,7 @@
   "author": "Snowcoders",
   "license": "MIT",
   "lint-staged": {
-    "**/*.ts": [
+    "**/*{.ts|.tsx}": [
       "prettier --write",
       "sortier",
       "git add"
