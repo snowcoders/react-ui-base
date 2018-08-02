@@ -10,7 +10,7 @@
         "noImplicitThis": true,
         "noImplicitAny": true,
         "experimentalDecorators": true,
-        "noUnusedLocals": false,
+        "noUnusedLocals": true,
         "forceConsistentCasingInFileNames": true,
         "strictNullChecks": true,
         "preserveConstEnums": true,

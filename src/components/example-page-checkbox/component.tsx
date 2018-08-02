@@ -3,7 +3,6 @@ import * as React from "react";
 import { Checkbox } from "@snowcoders/react-checkbox";
 import "@snowcoders/react-checkbox/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
 
 import * as classnames from "classnames";
@@ -14,7 +13,7 @@ export type AvailableClassNames =
   | "office-checkbox"
   | "office-switch";
 
-export interface IExamplePageCheckboxProps {}
+export interface IExamplePageCheckboxProps { }
 
 export interface IExamplePageCheckboxState {
   classNameToApply: AvailableClassNames;
@@ -23,7 +22,7 @@ export interface IExamplePageCheckboxState {
 export class ExamplePageCheckbox extends React.Component<
   IExamplePageCheckboxProps,
   IExamplePageCheckboxState
-> {
+  > {
   constructor(props: IExamplePageCheckboxProps) {
     super(props);
 

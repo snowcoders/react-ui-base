@@ -3,7 +3,6 @@ import * as React from "react";
 import { Dialog } from "@snowcoders/react-dialog";
 import "@snowcoders/react-dialog/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
 
 import * as classnames from "classnames";

@@ -3,7 +3,6 @@ import * as React from "react";
 import { UnstyledButton } from "@snowcoders/react-unstyled-button";
 import "@snowcoders/react-unstyled-button/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
 
 export class ExamplePageUnstyledButton extends React.Component {

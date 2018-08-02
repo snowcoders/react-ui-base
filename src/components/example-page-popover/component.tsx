@@ -3,14 +3,11 @@ import * as React from "react";
 import { Popover, PopperType, TargetType } from "@snowcoders/react-popover";
 import "@snowcoders/react-popover/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
-
-import * as classnames from "classnames";
 
 type PopperPositionOptions = "bottom" | "left" | "right" | "top";
 
-export interface IExamplePagePopoverProps {}
+export interface IExamplePagePopoverProps { }
 
 export interface IExamplePagePopoverState {
   popperMoreCount: number;
@@ -22,7 +19,7 @@ export interface IExamplePagePopoverState {
 export class ExamplePagePopover extends React.Component<
   IExamplePagePopoverProps,
   IExamplePagePopoverState
-> {
+  > {
   constructor(props: IExamplePagePopoverProps) {
     super(props);
 
@@ -265,7 +262,7 @@ interface PopoverContentState {
 class PopoverContent extends React.Component<
   PopoverContentProps,
   PopoverContentState
-> {
+  > {
   constructor(props: PopoverContentProps) {
     super(props);
 

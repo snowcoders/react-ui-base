@@ -3,7 +3,6 @@ import * as React from "react";
 import { UnstyledInput } from "@snowcoders/react-unstyled-input";
 import "@snowcoders/react-unstyled-input/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
 
 export class ExamplePageUnstyledInput extends React.Component {

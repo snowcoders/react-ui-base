@@ -7,7 +7,6 @@
     "build": "webpack",
     "clean": "rimraf dist",
     "precommit": "lint-staged",
-    "A": "sortier",
     "prepare": "npm run clean && npm run build",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
@@ -20,6 +19,10 @@
     "**/*.ts": [
       "prettier --write",
       "sortier",
+      "git add"
+    ],
+    "**/*{.scss|.css}": [
+      "prettier --write",
       "git add"
     ]
   },

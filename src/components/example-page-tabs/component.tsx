@@ -3,7 +3,6 @@ import * as React from "react";
 import { Tabs } from "@snowcoders/react-tabs";
 import "@snowcoders/react-tabs/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from "../example-page-base";
 
 import * as classnames from "classnames";
