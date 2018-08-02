@@ -40,7 +40,7 @@
     "classnames": "^2.2.5",
     "concurrently": "^3.5.1",
     "copyfiles": "^1.2.0",
-    "css-loader": "^0.28.7",
+    "css-loader": "^1.0.0",
     "highlight.js": "^9.12.0",
     "html-loader": "^0.5.1",
     "husky": "0.14.3",
