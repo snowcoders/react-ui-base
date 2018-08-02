@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist",
+    "precommit": "lint-staged",
     "prepare": "npm run clean && npm run build",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
@@ -14,7 +15,19 @@
   "repository": "https://github.com/snowcoders/react-ui-base",
   "author": "Snowcoders",
   "license": "MIT",
+  "lint-staged": {
+    "**/*{.ts|.tsx}": [
+      "prettier --write",
+      "sortier",
+      "git add"
+    ],
+    "**/*{.scss|.css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
+    "@snowcoders/sortier": "^2.1.8",
     "@types/classnames": "^2.2.3",
     "@types/highlight.js": "^9.12.2",
     "@types/node": "^8.5.2",
@@ -30,19 +43,22 @@
     "css-loader": "^0.28.7",
     "highlight.js": "^9.12.0",
     "html-loader": "^0.5.1",
+    "husky": "0.14.3",
+    "lint-staged": "7.2.0",
     "live-server": "^1.2.0",
     "node-sass": "^4.7.2",
     "popper.js": "^1.14.0",
+    "prettier": "1.14.0",
+    "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-resize-detector": "^3.0.1",
     "react-router-dom": "^4.2.2",
-    "react": "^16.2.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.1",
-    "tslib": "^1.9.0",
     "ts-node": "^4.1.0",
+    "tslib": "^1.9.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   },

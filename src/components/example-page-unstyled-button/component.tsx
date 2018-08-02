@@ -1,33 +1,55 @@
-import * as React from 'react';
+import * as React from "react";
 
-import "@snowcoders/react-unstyled-button/styles.css";
 import { UnstyledButton } from "@snowcoders/react-unstyled-button";
+import "@snowcoders/react-unstyled-button/styles.css";
 
-import { ExampleComponentBase } from "../example-component-base";
-import { ExamplePageBase } from '../example-page-base';
+import { ExamplePageBase } from "../example-page-base";
 
 export class ExamplePageUnstyledButton extends React.Component {
-    render() {
-        return <ExamplePageBase
-            componentName="Unstyled Button"
-            npmPackageName="@snowcoders/react-unstyled-button"
-            componentDescription="The unstyled button is an accessible version of a div with an onClick handler. Because it is a normal HTMLButtonElement it by default is tabbable, screen reader accessible and easy to manipulate via the css state selectors."
-            githubUrl="https://github.com/snowcoders/react-unstyled-button"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-button"
-            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-unstyled-button"
-            examples={[{
-                description: "An UnstyledButton with the exported styles disabled",
-                example: <UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>,
-                source: "<UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>"
-            }, {
-                description: "An UnstyledButton with the exported styles",
-                example: <UnstyledButton onClick={this.onClick}>Button with default styles</UnstyledButton>,
-                source: `import "@snowcoders/react-unstyled-button/styles.css";
+  render() {
+    return (
+      <ExamplePageBase
+        componentDescription="The unstyled button is an accessible version of a div with an onClick handler. Because it is a normal HTMLButtonElement it by default is tabbable, screen reader accessible and easy to manipulate via the css state selectors."
+        componentName="Unstyled Button"
+        exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-unstyled-button"
+        githubUrl="https://github.com/snowcoders/react-unstyled-button"
+        npmPackageName="@snowcoders/react-unstyled-button"
+        npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-button"
+        examples={[
+          {
+            description: "An UnstyledButton with the exported styles disabled",
+            example: (
+              <UnstyledButton
+                onClick={this.onClick}
+                isBaseStylesDisabled={true}
+              >
+                Button that only has the functionality
+              </UnstyledButton>
+            ),
+            source:
+              "<UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>"
+          },
+          {
+            description: "An UnstyledButton with the exported styles",
+            example: (
+              <UnstyledButton onClick={this.onClick}>
+                Button with default styles
+              </UnstyledButton>
+            ),
+            source: `import "@snowcoders/react-unstyled-button/styles.css";
 <UnstyledButton onClick={this.onClick}>Button with default styles</UnstyledButton>`
-            }, {
-                description: "An UnstyledButton with some custom styling",
-                example: <UnstyledButton onClick={this.onClick} className="sci-react-ui-base-example-page-unstyled-button">Button with custom styles added to the default styles</UnstyledButton>,
-                source: `import "@snowcoders/react-unstyled-button/styles.css";
+          },
+          {
+            description: "An UnstyledButton with some custom styling",
+            example: (
+              <UnstyledButton
+                onClick={this.onClick}
+                className="sci-react-ui-base-example-page-unstyled-button"
+              >
+                Button with custom styles added to the default styles
+              </UnstyledButton>
+            ),
+            source: `import "@snowcoders/react-unstyled-button/styles.css";
 <styles>
 .sci-react-unstyled-button.sci-react-ui-base-example-page-unstyled-button {
     // Box-Sizing
@@ -51,11 +73,13 @@ export class ExamplePageUnstyledButton extends React.Component {
 }
 </styles>
 <UnstyledButton onClick={this.onClick} className ="sci-react-ui-base-example-page-unstyled-button">Button with custom styles added to the default styles</UnstyledButton>`
-            }]}
-        />;
-    }
+          }
+        ]}
+      />
+    );
+  }
 
-    onClick = () => {
-        alert("Button was clicked");
-    };
+  onClick = () => {
+    alert("Button was clicked");
+  };
 }
