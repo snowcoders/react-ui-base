@@ -16,6 +16,6 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: cover
-          command: npm run cover
+          name: build
+          command: npm run build
           
