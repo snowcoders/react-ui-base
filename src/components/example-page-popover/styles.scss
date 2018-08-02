@@ -33,8 +33,6 @@
 
         > .example,
         > .example > .react-15 {
-            text-align: center;
-
             $contentBackgroundColor: #FFC107;
             $contentBorderRadius: 10px;
             $contentPadding: 15px;
@@ -59,8 +57,14 @@
                     background: $contentBackgroundColor;
                     color: $textColor;
                     padding: $contentPadding;
-                    text-align: center;
                     border-radius: $contentBorderRadius;
+                    
+                    > .popper-content {
+                        > .text {
+                            text-align: center;
+                            max-width: 250px;
+                        }
+                    }
 
                     > .popper__arrow {
                         position: absolute;

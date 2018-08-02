@@ -8,7 +8,7 @@ export interface ICodeHighlighterProps {
 }
 
 export class CodeHighlighter extends React.Component<ICodeHighlighterProps> {
-    private ref: HTMLPreElement | null;
+    private ref: null | HTMLPreElement;
 
     componentDidMount() {
         if (this.ref != null) {

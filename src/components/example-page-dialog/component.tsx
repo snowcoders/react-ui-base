@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import "@snowcoders/react-dialog/styles.css";
 import { Dialog } from "@snowcoders/react-dialog";
+import "@snowcoders/react-dialog/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
 
 import * as classnames from "classnames";
 
-export type AvailableClassNames = "google" | "office" | "jquery-ui" | "default";
+export type AvailableClassNames = "default" | "google" | "jquery-ui" | "office";
 
 export interface IExamplePageDialogProps {
 }
@@ -39,12 +39,8 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
         }];
 
         return <ExamplePageBase
-            componentName="Dialog"
-            npmPackageName="@snowcoders/react-dialog"
             componentDescription="The dialog is a basic positioning component that puts the content centered on the screen over the rest of the page"
-            githubUrl="https://github.com/snowcoders/react-dialog"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-dialog"
-            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-dialog"
+            componentName="Dialog"
             examples={[{
                 description: "Dialog component with styling of a few UI libraries",
                 example: (
@@ -84,6 +80,10 @@ export class ExamplePageDialog extends React.Component<IExamplePageDialogProps, 
                         </Dialog>
                     </div>)
             }]}
+            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-dialog"
+            githubUrl="https://github.com/snowcoders/react-dialog"
+            npmPackageName="@snowcoders/react-dialog"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-dialog"
         />;
     }
 

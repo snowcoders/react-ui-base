@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import "@snowcoders/react-unstyled-button/styles.css";
 import { UnstyledButton } from "@snowcoders/react-unstyled-button";
+import "@snowcoders/react-unstyled-button/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
@@ -9,12 +9,12 @@ import { ExamplePageBase } from '../example-page-base';
 export class ExamplePageUnstyledButton extends React.Component {
     render() {
         return <ExamplePageBase
-            componentName="Unstyled Button"
-            npmPackageName="@snowcoders/react-unstyled-button"
             componentDescription="The unstyled button is an accessible version of a div with an onClick handler. Because it is a normal HTMLButtonElement it by default is tabbable, screen reader accessible and easy to manipulate via the css state selectors."
-            githubUrl="https://github.com/snowcoders/react-unstyled-button"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-button"
+            componentName="Unstyled Button"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-unstyled-button"
+            githubUrl="https://github.com/snowcoders/react-unstyled-button"
+            npmPackageName="@snowcoders/react-unstyled-button"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-button"
             examples={[{
                 description: "An UnstyledButton with the exported styles disabled",
                 example: <UnstyledButton onClick={this.onClick} isBaseStylesDisabled={true}>Button that only has the functionality</UnstyledButton>,

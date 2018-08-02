@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import "@snowcoders/react-checkbox/styles.css";
 import { Checkbox } from "@snowcoders/react-checkbox";
+import "@snowcoders/react-checkbox/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
@@ -42,12 +42,8 @@ export class ExamplePageCheckbox extends React.Component<IExamplePageCheckboxPro
         }];
 
         return <ExamplePageBase
-            componentName="Checkbox"
-            npmPackageName="@snowcoders/react-checkbox"
             componentDescription="The checkbox is a wrapper around a <input type='checkbox' /> that allows for customization of the checkbox. The uncontrolled version of this component has two states, checked and unchecked"
-            githubUrl="https://github.com/snowcoders/react-checkbox"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-checkbox"
-            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-checkbox"
+            componentName="Checkbox"
             examples={[{
                 description: "An Checkbox with the exported styles disabled",
                 example:
@@ -74,7 +70,11 @@ export class ExamplePageCheckbox extends React.Component<IExamplePageCheckboxPro
                             }
                             labelText={"Checkbox text"}></Checkbox>
                     </div>
-            }]} />;
+            }]}
+            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-checkbox"
+            githubUrl="https://github.com/snowcoders/react-checkbox"
+            npmPackageName="@snowcoders/react-checkbox"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-checkbox" />;
     }
 
     getOnClick(className: AvailableClassNames) {

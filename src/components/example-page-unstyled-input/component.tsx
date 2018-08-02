@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import "@snowcoders/react-unstyled-input/styles.css";
 import { UnstyledInput } from "@snowcoders/react-unstyled-input";
+import "@snowcoders/react-unstyled-input/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
@@ -10,12 +10,12 @@ export class ExamplePageUnstyledInput extends React.Component {
     render() {
 
         return <ExamplePageBase
-            componentName="Unstyled Input"
-            npmPackageName="@snowcoders/react-unstyled-input"
             componentDescription="The UnstyledInput is a HTMLInputElement with all the browser default styling removed so it looks like HTMLDivElement"
-            githubUrl="https://github.com/snowcoders/react-unstyled-input"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-input"
+            componentName="Unstyled Input"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-unstyled-input"
+            githubUrl="https://github.com/snowcoders/react-unstyled-input"
+            npmPackageName="@snowcoders/react-unstyled-input"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-unstyled-input"
             examples={[{
                 description: "An UnstyledInput with the exported styles disabled",
                 example: <UnstyledInput isBaseStylesDisabled={true} type="number" defaultValue="10" />,

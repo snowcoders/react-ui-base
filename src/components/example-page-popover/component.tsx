@@ -1,22 +1,23 @@
 import * as React from 'react';
 
-import "@snowcoders/react-popover/styles.css";
 import { Popover, PopperType, TargetType } from '@snowcoders/react-popover';
+import "@snowcoders/react-popover/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
 
 import * as classnames from "classnames";
 
-type PopperPositionOptions = "bottom" | "top" | "left" | "right";
+type PopperPositionOptions = "bottom" | "left" | "right" | "top";
 
 export interface IExamplePagePopoverProps {
 }
 
 export interface IExamplePagePopoverState {
-    targetType: TargetType,
+    popperMoreCount: number,
     popperType: PopperType,
     position: PopperPositionOptions,
+    targetType: TargetType,
 }
 
 export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps, IExamplePagePopoverState> {
@@ -24,59 +25,60 @@ export class ExamplePagePopover extends React.Component<IExamplePagePopoverProps
         super(props);
 
         this.state = {
-            targetType: "hover",
+            popperMoreCount: 0,
             popperType: "hover",
             position: "bottom",
+            targetType: "hover",
         };
     }
 
     render() {
         let popperTypeToName: { popperType: PopperType, name: string }[] = [{
-            popperType: "hover",
-            name: "Hover"
+            name: "Hover",
+            popperType: "hover"
         },
         {
-            popperType: "blur",
-            name: "Blur"
+            name: "Blur",
+            popperType: "blur"
         },
         {
-            popperType: "click",
-            name: "Click"
+            name: "Click",
+            popperType: "click"
         }, {
-            popperType: "none",
-            name: "None"
+            name: "None",
+            popperType: "none"
         }];
         let targetTypeToName: { targetType: TargetType, name: string }[] = [{
-            targetType: "hover",
-            name: "Hover"
+            name: "Hover",
+            targetType: "hover"
         },
         {
-            targetType: "click",
-            name: "Click"
+            name: "Click",
+            targetType: "click"
         }];
         let positionToName: { position: PopperPositionOptions, name: string }[] = [{
-            position: "bottom",
-            name: "Bottom"
+            name: "Bottom",
+            position: "bottom"
         },
         {
-            position: "top",
-            name: "Top"
+            name: "Top",
+            position: "top"
         },
         {
-            position: "left",
-            name: "Left"
+            name: "Left",
+            position: "left"
         }, {
-            position: "right",
-            name: "Right"
+            name: "Right",
+            position: "right"
         }];
 
         return <ExamplePageBase
-            componentName="Popover"
-            npmPackageName="@snowcoders/react-popover"
             componentDescription="The popover some element that expands more content from a parent element. Tooltips, dropdowns, selects, menus and more fit into this category. Instead of writing code for each of these individually, we instead wrote a few base helper classes which should allow a developer to customize them into any specific subtype."
-            githubUrl="https://github.com/snowcoders/react-popover"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-popover"
+            componentName="Popover"
             exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-popover"
+            githubUrl="https://github.com/snowcoders/react-popover"
+            npmPackageName="@snowcoders/react-popover"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-popover"
             examples={[{
                 description: "Popover example showing off target and popper types",
                 source: `import "@snowcoders/react-popover/styles.css";
@@ -139,7 +141,7 @@ import { Popover, PopperType, TargetType } from '@snowcoders/react-popover';
                                 <Popover
                                     wrapperElementType={"span"}
                                     wrapperElementProps={{ className: "react-15" }}
-                                    popperContent={"Popper type - " + this.state.popperType}
+                                    popperContent={<PopoverContent prefixText={this.state.popperType} />}
                                     popperOptions={{
                                         placement: this.state.position
                                     }}
@@ -176,4 +178,48 @@ import { Popover, PopperType, TargetType } from '@snowcoders/react-popover';
             });
         };
     };
+}
+
+interface PopoverContentProps {
+    prefixText: string
+}
+
+interface PopoverContentState {
+    popperMoreCount: number
+}
+
+class PopoverContent extends React.Component<PopoverContentProps, PopoverContentState> {
+    constructor(props: PopoverContentProps) {
+        super(props);
+
+        this.state = {
+            popperMoreCount: 0
+        }
+    }
+
+    render() {
+        return <div className="popper-content">
+            <div className="text">Popper type - {this.props.prefixText}</div>
+            <ul>{new Array(this.state.popperMoreCount).fill(0).map((value, index) => <li key={index}>{`Item #${index}`}</li>)}
+            </ul>
+            <div className="buttons">
+                <button onClick={this.onRemoveItem}>Remove item</button>
+                <button onClick={this.onAddItem}>Add item</button>
+            </div>
+        </div>;
+    }
+
+    onRemoveItem = () => {
+        if (this.state.popperMoreCount != 0) {
+            this.setState({
+                popperMoreCount: this.state.popperMoreCount - 1
+            });
+        }
+    }
+
+    onAddItem = () => {
+        this.setState({
+            popperMoreCount: this.state.popperMoreCount + 1
+        });
+    }
 }

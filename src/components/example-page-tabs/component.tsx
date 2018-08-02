@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import "@snowcoders/react-tabs/styles.css";
 import { Tabs } from "@snowcoders/react-tabs";
+import "@snowcoders/react-tabs/styles.css";
 
 import { ExampleComponentBase } from "../example-component-base";
 import { ExamplePageBase } from '../example-page-base';
 
 import * as classnames from "classnames";
 
-export type AvailableClassNames = "google" | "office" | "jquery-ui" | "default";
+export type AvailableClassNames = "default" | "google" | "jquery-ui" | "office";
 
 export interface IExamplePageTabsProps {
 }
@@ -43,12 +43,8 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
         }];
 
         return <ExamplePageBase
-            componentName="Unstyled Input"
-            npmPackageName="@snowcoders/react-tabs"
             componentDescription="The Tabs is a HTMLInputElement with all the browser default styling removed so it looks like HTMLDivElement"
-            githubUrl="https://github.com/snowcoders/react-tabs"
-            npmUrl="https://www.npmjs.com/package/@snowcoders/react-tabs"
-            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-tabs"
+            componentName="Unstyled Input"
             examples={[{
                 description: "Tabs component with styling of a few UI libraries",
                 example: (
@@ -70,6 +66,10 @@ export class ExamplePageTabs extends React.Component<IExamplePageTabsProps, IExa
                             })} />
                     </div>)
             }]}
+            exampleSrcUrl="https://github.com/snowcoders/react-ui-base/tree/master/src/components/example-page-tabs"
+            githubUrl="https://github.com/snowcoders/react-tabs"
+            npmPackageName="@snowcoders/react-tabs"
+            npmUrl="https://www.npmjs.com/package/@snowcoders/react-tabs"
         />;
     }
 

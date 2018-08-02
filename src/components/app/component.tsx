@@ -1,16 +1,16 @@
 import * as React from 'react';
 
-import { HashRouter, Link, Switch, Route } from 'react-router-dom';
+import { HashRouter, Link, Route, Switch } from 'react-router-dom';
 
-import { Home } from "../home";
-import { Usage } from "../usage";
-import { Styling } from "../styling";
-import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
-import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
+import { ExamplePageCheckbox } from '../example-page-checkbox';
+import { ExamplePageDialog } from '../example-page-dialog';
 import { ExamplePagePopover } from '../example-page-popover';
 import { ExamplePageTabs } from '../example-page-tabs';
-import { ExamplePageDialog } from '../example-page-dialog';
-import { ExamplePageCheckbox } from '../example-page-checkbox';
+import { ExamplePageUnstyledButton } from "../example-page-unstyled-button";
+import { ExamplePageUnstyledInput } from "../example-page-unstyled-input";
+import { Home } from "../home";
+import { Styling } from "../styling";
+import { Usage } from "../usage";
 
 export interface IAppProps {
 }
@@ -22,46 +22,46 @@ export class App extends React.Component<IAppProps, IAppState> {
     render() {
         let documentationLinkConfig = [
             {
+                component: Usage,
                 name: "Usage",
-                url: "/usage",
-                component: Usage
+                url: "/usage"
             },
             {
+                component: Styling,
                 name: "Styling",
-                url: "/styling",
-                component: Styling
+                url: "/styling"
             }
         ];
         let componentLinkConfig = [
             {
+                component: ExamplePageCheckbox,
                 name: "Checkbox",
-                url: "/checkbox",
-                component: ExamplePageCheckbox
+                url: "/checkbox"
             },
             {
+                component: ExamplePageDialog,
                 name: "Dialog",
-                url: "/dialog",
-                component: ExamplePageDialog
+                url: "/dialog"
             },
             {
+                component: ExamplePageTabs,
                 name: "Tabs",
-                url: "/tabs",
-                component: ExamplePageTabs
+                url: "/tabs"
             },
             {
+                component: ExamplePagePopover,
                 name: "Popover",
-                url: "/popover",
-                component: ExamplePagePopover
+                url: "/popover"
             },
             {
+                component: ExamplePageUnstyledButton,
                 name: "Unstyled Button",
-                url: "/unstyled-button",
-                component: ExamplePageUnstyledButton
+                url: "/unstyled-button"
             },
             {
+                component: ExamplePageUnstyledInput,
                 name: "Unstyled Input",
-                url: "/unstyled-input",
-                component: ExamplePageUnstyledInput
+                url: "/unstyled-input"
             },
         ];
 

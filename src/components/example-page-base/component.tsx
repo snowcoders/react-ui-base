@@ -6,13 +6,13 @@ import * as classnames from "classnames";
 
 export interface IExamplePageBaseProps {
     className?: string;
-    componentName: string;
-    npmPackageName: string;
     componentDescription: React.ReactNode;
-    faq?: React.ReactNode[];
-    exampleSrcUrl: string;
+    componentName: string;
     examples: IExampleComponentBaseProps[];
+    exampleSrcUrl: string;
+    faq?: React.ReactNode[];
     githubUrl: string;
+    npmPackageName: string;
     npmUrl: string;
 }
 
