@@ -6,7 +6,4 @@ import { App } from "./components/app";
 let mountingDiv = document.createElement("div");
 document.body.appendChild(mountingDiv);
 
-ReactDOM.render(
-    <App />,
-    mountingDiv
-);
+ReactDOM.render(<App />, mountingDiv);

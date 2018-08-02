@@ -1,58 +1,60 @@
-import * as React from 'react';
-import { CodeHighlighter } from '../code-highlighter';
+import * as React from "react";
+import { CodeHighlighter } from "../code-highlighter";
 
 export interface IExampleComponentBaseProps {
-    description?: string;
-    example: JSX.Element;
-    source?: string;
+  description?: string;
+  example: JSX.Element;
+  source?: string;
 }
 
 export interface IExampleComponentBaseState {
-    isCodeShowing: boolean;
+  isCodeShowing: boolean;
 }
 
-export class ExampleComponentBase extends React.Component<IExampleComponentBaseProps, IExampleComponentBaseState> {
-    constructor(props: IExampleComponentBaseProps) {
-        super(props);
+export class ExampleComponentBase extends React.Component<
+  IExampleComponentBaseProps,
+  IExampleComponentBaseState
+> {
+  constructor(props: IExampleComponentBaseProps) {
+    super(props);
 
-        this.state = {
-            isCodeShowing: false
-        };
-    }
-    render() {
-        return (
-            <div className="sci-react-ui-base-example-component-base">
-                <div className="header">
-                    <div className="description">{this.props.description}</div>
-                    {
-                        this.props.source &&
-                        <button className="toggle" onClick={this.toggleView}>{this.computeToggleButtonName()}</button>}
-                </div>
-                <div className="visual">
-                    {
-                        !this.state.isCodeShowing &&
-                        this.props.example
-                    }
-                    {
-                        this.state.isCodeShowing && this.props.source &&
-                        <CodeHighlighter javascriptSourceCode={this.props.source} />
-                    }
-                </div>
-            </div>
-        );
-    }
-
-    private computeToggleButtonName() {
-        if (this.state.isCodeShowing) {
-            return "Show example";
-        } else {
-            return "Show code";
-        }
-    }
-
-    private toggleView = () => {
-        this.setState({
-            isCodeShowing: !this.state.isCodeShowing
-        });
+    this.state = {
+      isCodeShowing: false
     };
+  }
+  render() {
+    return (
+      <div className="sci-react-ui-base-example-component-base">
+        <div className="header">
+          <div className="description">{this.props.description}</div>
+          {this.props.source && (
+            <button className="toggle" onClick={this.toggleView}>
+              {this.computeToggleButtonName()}
+            </button>
+          )}
+        </div>
+        <div className="visual">
+          {!this.state.isCodeShowing && this.props.example}
+          {this.state.isCodeShowing &&
+            this.props.source && (
+              <CodeHighlighter javascriptSourceCode={this.props.source} />
+            )}
+        </div>
+      </div>
+    );
+  }
+
+  private computeToggleButtonName() {
+    if (this.state.isCodeShowing) {
+      return "Show example";
+    } else {
+      return "Show code";
+    }
+  }
+
+  private toggleView = () => {
+    this.setState({
+      isCodeShowing: !this.state.isCodeShowing
+    });
+  };
 }
