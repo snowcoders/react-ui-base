@@ -1,12 +1,11 @@
 .sci-react-ui-base-example-page-base {
+  > * {
+    margin-bottom: 20px;
+  }
 
-    > * {
-        margin-bottom: 20px;
+  > .links-section {
+    > .list {
+      margin: 0px;
     }
-
-    > .links-section {
-        > .list {
-            margin: 0px;
-        }
-    }
+  }
 }

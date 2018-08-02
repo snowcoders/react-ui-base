@@ -10,6 +10,7 @@ type PopperPositionOptions = "bottom" | "left" | "right" | "top";
 export interface IExamplePagePopoverProps { }
 
 export interface IExamplePagePopoverState {
+  popperMoreCount: number;
   popperType: PopperType;
   position: PopperPositionOptions;
   targetType: TargetType;
@@ -23,6 +24,7 @@ export class ExamplePagePopover extends React.Component<
     super(props);
 
     this.state = {
+      popperMoreCount: 0,
       popperType: "hover",
       position: "bottom",
       targetType: "hover"
@@ -204,7 +206,9 @@ import { Popover, PopperType, TargetType } from '@snowcoders/react-popover';
                     <Popover
                       wrapperElementType={"span"}
                       wrapperElementProps={{ className: "react-15" }}
-                      popperContent={"Popper type - " + this.state.popperType}
+                      popperContent={
+                        <PopoverContent prefixText={this.state.popperType} />
+                      }
                       popperOptions={{
                         placement: this.state.position
                       }}
@@ -245,4 +249,56 @@ import { Popover, PopperType, TargetType } from '@snowcoders/react-popover';
       });
     };
   }
+}
+
+interface PopoverContentProps {
+  prefixText: string;
+}
+
+interface PopoverContentState {
+  popperMoreCount: number;
+}
+
+class PopoverContent extends React.Component<
+  PopoverContentProps,
+  PopoverContentState
+  > {
+  constructor(props: PopoverContentProps) {
+    super(props);
+
+    this.state = {
+      popperMoreCount: 0
+    };
+  }
+
+  render() {
+    return (
+      <div className="popper-content">
+        <div className="text">Popper type - {this.props.prefixText}</div>
+        <ul>
+          {new Array(this.state.popperMoreCount).fill(0).map((value, index) => (
+            <li key={index}>{`Item #${index}`}</li>
+          ))}
+        </ul>
+        <div className="buttons">
+          <button onClick={this.onRemoveItem}>Remove item</button>
+          <button onClick={this.onAddItem}>Add item</button>
+        </div>
+      </div>
+    );
+  }
+
+  onRemoveItem = () => {
+    if (this.state.popperMoreCount != 0) {
+      this.setState({
+        popperMoreCount: this.state.popperMoreCount - 1
+      });
+    }
+  };
+
+  onAddItem = () => {
+    this.setState({
+      popperMoreCount: this.state.popperMoreCount + 1
+    });
+  };
 }

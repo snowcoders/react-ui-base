@@ -1,108 +1,111 @@
 .sci-react-ui-base-example-page-popover {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-    > .left-pane { 
+  > .left-pane {
+    flex: 0 0 auto;
+    > .options {
+      display: flex;
+      flex-direction: row;
+      > .style-selector {
         flex: 0 0 auto;
-        > .options {
-            display: flex;
-            flex-direction: row;
-            > .style-selector {
-                flex: 0 0 auto;
-
-                display: flex;
-                flex-direction: column; 
-                grid-gap: 10px;
-                margin: 0 10px;
-
-                > * {
-                    margin-bottom: 10px;
-                }
-            }
-        }
-    }
-
-    > .popover-example {
-        flex: 1 1 0px;
 
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        grid-gap: 10px;
+        margin: 0 10px;
 
-
-        > .example,
-        > .example > .react-15 {
-            text-align: center;
-
-            $contentBackgroundColor: #FFC107;
-            $contentBorderRadius: 10px;
-            $contentPadding: 15px;
-            $textColor: #000000;
-            $arrowColor: $contentBackgroundColor;
-            $arrowSize: 10px;
-        
-            > .sci-react-popover--target {
-                color: green;
-            }
-
-            > .sci-react-popover--popper {
-                visibility: hidden;
-                opacity: 0;
-                transition: opacity 0.4s, visibility 0.4s;
-
-                &.visible {
-                    visibility: visible;
-                    opacity: 1;
-                }
-                > .content {
-                    background: $contentBackgroundColor;
-                    color: $textColor;
-                    padding: $contentPadding;
-                    text-align: center;
-                    border-radius: $contentBorderRadius;
-
-                    > .popper__arrow {
-                        position: absolute;
-                        border-color: transparent;
-                        border-style: solid;
-                        border-width: $arrowSize;
-                    }
-                    
-                    &[data-placement="top"] {
-                        margin-bottom: $arrowSize;
-                        > .popper__arrow {
-                            border-bottom-width: 0px;
-                            border-top-color: $arrowColor;
-                            bottom: -$arrowSize;
-                        }
-                    }
-                    &[data-placement="bottom"] {
-                        margin-top: $arrowSize;
-                        > .popper__arrow {
-                            border-top-width: 0px;
-                            border-bottom-color: $arrowColor;
-                            top: -$arrowSize;
-                        }
-                    }
-                    &[data-placement="right"] {
-                        margin-left: $arrowSize;
-                        > .popper__arrow {
-                            border-left-width: 0px;
-                            border-right-color: $arrowColor;
-                            left: -$arrowSize;
-                        }
-                    }
-                    &[data-placement="left"] {
-                        margin-right: $arrowSize;
-                        > .popper__arrow {
-                            border-right-width: 0px;
-                            border-left-color: $arrowColor;
-                            right: -$arrowSize;
-                        }
-                    }
-                }
-            }
+        > * {
+          margin-bottom: 10px;
         }
+      }
     }
+  }
+
+  > .popover-example {
+    flex: 1 1 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > .example,
+    > .example > .react-15 {
+      $contentBackgroundColor: #ffc107;
+      $contentBorderRadius: 10px;
+      $contentPadding: 15px;
+      $textColor: #000000;
+      $arrowColor: $contentBackgroundColor;
+      $arrowSize: 10px;
+
+      > .sci-react-popover--target {
+        color: green;
+      }
+
+      > .sci-react-popover--popper {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.4s, visibility 0.4s;
+
+        &.visible {
+          visibility: visible;
+          opacity: 1;
+        }
+        > .content {
+          background: $contentBackgroundColor;
+          color: $textColor;
+          padding: $contentPadding;
+          border-radius: $contentBorderRadius;
+
+          > .popper-content {
+            > .text {
+              text-align: center;
+              max-width: 250px;
+            }
+          }
+
+          > .popper__arrow {
+            position: absolute;
+            border-color: transparent;
+            border-style: solid;
+            border-width: $arrowSize;
+          }
+
+          &[data-placement="top"] {
+            margin-bottom: $arrowSize;
+            > .popper__arrow {
+              border-bottom-width: 0px;
+              border-top-color: $arrowColor;
+              bottom: -$arrowSize;
+            }
+          }
+          &[data-placement="bottom"] {
+            margin-top: $arrowSize;
+            > .popper__arrow {
+              border-top-width: 0px;
+              border-bottom-color: $arrowColor;
+              top: -$arrowSize;
+            }
+          }
+          &[data-placement="right"] {
+            margin-left: $arrowSize;
+            > .popper__arrow {
+              border-left-width: 0px;
+              border-right-color: $arrowColor;
+              left: -$arrowSize;
+            }
+          }
+          &[data-placement="left"] {
+            margin-right: $arrowSize;
+            > .popper__arrow {
+              border-right-width: 0px;
+              border-left-color: $arrowColor;
+              right: -$arrowSize;
+            }
+          }
+        }
+      }
+    }
+  }
 }
