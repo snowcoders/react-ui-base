@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack-cli",
     "clean": "rimraf dist",
-    "precommit": "lint-staged",
     "prepare": "npm run clean && npm run build",
     "start": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "serve": "live-server --port=53002 --host=localhost --watch=dist,index.html",
@@ -15,17 +14,6 @@
   "repository": "https://github.com/snowcoders/react-ui-base",
   "author": "Snowcoders",
   "license": "MIT",
-  "lint-staged": {
-    "**/*{.ts|.tsx}": [
-      "prettier --write",
-      "sortier",
-      "git add"
-    ],
-    "**/*{.scss|.css}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "@snowcoders/sortier": "^2.1.8",
     "@types/classnames": "^2.2.6",
@@ -43,7 +31,7 @@
     "css-loader": "^1.0.0",
     "highlight.js": "^9.12.0",
     "html-loader": "^0.5.5",
-    "husky": "0.14.3",
+    "husky": "1.0.0",
     "lint-staged": "7.3.0",
     "live-server": "^1.2.0",
     "node-sass": "^4.9.2",
@@ -66,7 +54,7 @@
   "dependencies": {
     "@snowcoders/react-checkbox": "~0.1.0",
     "@snowcoders/react-dialog": "~1.0.0",
-    "@snowcoders/react-popover": "^1.1.3",
+    "@snowcoders/react-popover": "^1.1.4",
     "@snowcoders/react-tabs": "~0.1.3",
     "@snowcoders/react-unstyled-button": "~1.2.2",
     "@snowcoders/react-unstyled-input": "~0.2.0",
