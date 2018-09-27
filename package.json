@@ -43,7 +43,7 @@
     "style-loader": "0.23.0",
     "ts-node": "7.0.1",
     "tslib": "1.9.3",
-    "typescript": "3.0.3",
+    "typescript": "3.1.1",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.1"
   },
