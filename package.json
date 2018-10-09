@@ -55,6 +55,6 @@
     "@snowcoders/react-unstyled-button": "1.2.2",
     "@snowcoders/react-unstyled-input": "0.2.0",
     "react-popper": "1.0.2",
-    "react-resize-detector": "3.1.2"
+    "react-resize-detector": "3.1.3"
   }
 }
