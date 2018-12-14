@@ -5,7 +5,7 @@ import {
   IExampleComponentBaseProps
 } from "../example-component-base";
 
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 export interface IExamplePageBaseProps {
   className?: string;

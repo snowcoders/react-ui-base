@@ -1,26 +1,21 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "module": "es6",
-        "target": "es2015",
-        "moduleResolution": "node",
-        "jsx": "react",
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noImplicitAny": true,
-        "experimentalDecorators": true,
-        "noUnusedLocals": true,
-        "forceConsistentCasingInFileNames": true,
-        "strictNullChecks": true,
-        "preserveConstEnums": true,
-    },
-    "include": [
-        "./src/**/*.ts",
-        "./src/**/*.tsx"
-    ],
-    "exclude": [
-        "./src/**/*.test.ts",
-        "./src/**/*.test.tsx"
-    ]
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist/",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2015"
+  },
+  "exclude": ["./src/**/*.test.ts", "./src/**/*.test.tsx"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }

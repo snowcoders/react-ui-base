@@ -5,7 +5,7 @@ import "@snowcoders/react-checkbox/styles.css";
 
 import { ExamplePageBase } from "../example-page-base";
 
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 export type AvailableClassNames =
   | "google-checkbox"
@@ -13,7 +13,7 @@ export type AvailableClassNames =
   | "office-checkbox"
   | "office-switch";
 
-export interface IExamplePageCheckboxProps { }
+export interface IExamplePageCheckboxProps {}
 
 export interface IExamplePageCheckboxState {
   classNameToApply: AvailableClassNames;
@@ -22,7 +22,7 @@ export interface IExamplePageCheckboxState {
 export class ExamplePageCheckbox extends React.Component<
   IExamplePageCheckboxProps,
   IExamplePageCheckboxState
-  > {
+> {
   constructor(props: IExamplePageCheckboxProps) {
     super(props);
 

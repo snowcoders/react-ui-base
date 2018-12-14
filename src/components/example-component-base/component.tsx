@@ -35,10 +35,9 @@ export class ExampleComponentBase extends React.Component<
         </div>
         <div className="visual">
           {!this.state.isCodeShowing && this.props.example}
-          {this.state.isCodeShowing &&
-            this.props.source && (
-              <CodeHighlighter javascriptSourceCode={this.props.source} />
-            )}
+          {this.state.isCodeShowing && this.props.source && (
+            <CodeHighlighter javascriptSourceCode={this.props.source} />
+          )}
         </div>
       </div>
     );

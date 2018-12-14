@@ -7,7 +7,7 @@ import { ExamplePageBase } from "../example-page-base";
 
 type PopperPositionOptions = "bottom" | "left" | "right" | "top";
 
-export interface IExamplePagePopoverProps { }
+export interface IExamplePagePopoverProps {}
 
 export interface IExamplePagePopoverState {
   popperMoreCount: number;
@@ -19,7 +19,7 @@ export interface IExamplePagePopoverState {
 export class ExamplePagePopover extends React.Component<
   IExamplePagePopoverProps,
   IExamplePagePopoverState
-  > {
+> {
   constructor(props: IExamplePagePopoverProps) {
     super(props);
 
@@ -262,7 +262,7 @@ interface PopoverContentState {
 class PopoverContent extends React.Component<
   PopoverContentProps,
   PopoverContentState
-  > {
+> {
   constructor(props: PopoverContentProps) {
     super(props);
 
