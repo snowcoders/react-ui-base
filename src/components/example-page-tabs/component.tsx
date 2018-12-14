@@ -5,7 +5,7 @@ import "@snowcoders/react-tabs/styles.css";
 
 import { ExamplePageBase } from "../example-page-base";
 
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 export type AvailableClassNames = "default" | "google" | "jquery-ui" | "office";
 
