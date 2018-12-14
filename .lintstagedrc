@@ -4,7 +4,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/*.{ts,tsx,js,jsx,json,html}": [
+    "**/*.{html,js,jsx,json,ts,tsx}": [
       "prettier --write",
       "sortier",
       "git add"
