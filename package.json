@@ -42,7 +42,7 @@
     "tslib": "1.9.3",
     "typescript": "3.3.3",
     "webpack-cli": "3.2.3",
-    "webpack": "4.29.3"
+    "webpack": "4.29.5"
   },
   "license": "MIT",
   "main": "dist/main.js",
