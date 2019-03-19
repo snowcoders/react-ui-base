@@ -41,7 +41,7 @@
     "ts-node": "8.0.3",
     "tslib": "1.9.3",
     "typescript": "3.3.3333",
-    "webpack-cli": "3.2.3",
+    "webpack-cli": "3.3.0",
     "webpack": "4.29.6"
   },
   "license": "MIT",
