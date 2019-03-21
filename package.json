@@ -13,7 +13,7 @@
   "description": "Mega-package and website of react-ui-base components",
   "devDependencies": {
     "@snowcoders/renovate-config": "0.2.1",
-    "@snowcoders/sortier": "2.5.1",
+    "@snowcoders/sortier": "2.5.2",
     "@types/classnames": "2.2.7",
     "@types/highlight.js": "9.12.3",
     "@types/react-dom": "16.8.3",
