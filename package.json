@@ -22,7 +22,7 @@
     "@types/webpack": "4.32.1",
     "awesome-typescript-loader": "5.2.1",
     "classnames": "2.2.6",
-    "concurrently": "4.1.1",
+    "concurrently": "4.1.2",
     "copyfiles": "2.1.1",
     "css-loader": "3.2.0",
     "highlight.js": "9.15.9",
