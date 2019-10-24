@@ -29,7 +29,7 @@
     "husky": "3.0.9",
     "lint-staged": "9.4.0",
     "live-server": "1.2.1",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.0",
     "prettier": "1.18.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
