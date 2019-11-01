@@ -18,7 +18,7 @@
     "@types/highlight.js": "9.12.3",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
-    "@types/react-router-dom": "5.1.1",
+    "@types/react-router-dom": "5.1.2",
     "@types/webpack": "4.39.7",
     "awesome-typescript-loader": "5.2.1",
     "classnames": "2.2.6",
