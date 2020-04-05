@@ -30,7 +30,7 @@
     "lint-staged": "10.1.2",
     "live-server": "1.2.1",
     "node-sass": "4.13.1",
-    "prettier": "1.19.1",
+    "prettier": "2.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
