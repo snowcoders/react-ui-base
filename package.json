@@ -19,7 +19,7 @@
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "@types/react-router-dom": "5.1.5",
-    "@types/webpack": "4.41.13",
+    "@types/webpack": "4.41.14",
     "awesome-typescript-loader": "5.2.1",
     "classnames": "2.2.6",
     "concurrently": "5.2.0",
