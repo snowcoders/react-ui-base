@@ -25,7 +25,7 @@
     "concurrently": "5.2.0",
     "copyfiles": "2.3.0",
     "css-loader": "3.6.0",
-    "highlight.js": "10.1.1",
+    "highlight.js": "10.1.2",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "live-server": "1.2.1",
