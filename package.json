@@ -26,7 +26,7 @@
     "copyfiles": "2.3.0",
     "css-loader": "4.2.2",
     "highlight.js": "10.1.2",
-    "husky": "4.2.5",
+    "husky": "4.3.0",
     "lint-staged": "10.2.11",
     "live-server": "1.2.1",
     "node-sass": "4.14.1",
