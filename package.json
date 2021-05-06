@@ -27,7 +27,7 @@
     "css-loader": "5.2.4",
     "highlight.js": "10.7.2",
     "husky": "5.1.3",
-    "lint-staged": "10.2.11",
+    "lint-staged": "10.5.4",
     "live-server": "1.2.1",
     "node-sass": "5.0.0",
     "prettier": "2.1.0",
