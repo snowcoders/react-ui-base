@@ -2,8 +2,6 @@
 
 After several years of career growth and browser support, I've decided that at this point, none of the components that were originally in this toolkit are needed anymore. The biggest shift has been the deprecation of IE 11. Below you'll find alternatives or suggestions for each component and how to move forward.
 
-FYI: For clean up purposes, this repository will be up for deletion 01/01/2023 and it's existence is not guaranteed after that point.
-
 ## @snowcoders/react-checkbox
 
 Instead of guessing what css properties need to be turned off per browser, there is a new [all: unset](https://caniuse.com/css-all) property which will clear all browser customizations for you. This makes the css that is gained by this toolkit's component obsolete.

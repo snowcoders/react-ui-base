@@ -1,6 +1,6 @@
-dist/**
-coverage/*
-node_modules/*
+dist
+coverage
+node_modules
 src/**/*.css
 src/**/*-css.ts
 *.lock
