@@ -1,1 +1,0 @@
-export { CodeHighlighter } from "./component";
